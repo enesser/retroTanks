@@ -7,26 +7,17 @@ var gs = Meteor.gameSpace = Meteor.gameSpace || {};
 gs.bulletMover = {
 
 	//move bullets
-	moveBullets: function (walls, tankCollection, bulletCollection, tanks, bullets) {
+	moveBullets: function (walls, tanks, bullets) {
 
 		//on move
 		function moveCallback(sender) {
-			bulletCollection.update({
-				_id: sender._id
-			}, {
-				$set: {
-					x: sender.x,
-					y: sender.y,
-					angle: sender.angle,
-					mod: sender.mod
-				}
-			});
+			gs.bulletStore.update(sender);
 		}
 
 		//on collide
 		function collideCallback(sender, obstacle) {
-			if (obstacle.damage !== undefined) {
-				obstacle.damage();
+			/*
+			if (obstacle.isDamaged !== undefined) {
 				tankCollection.update({
 					_id: obstacle._id
 				}, {
@@ -34,11 +25,11 @@ gs.bulletMover = {
 						damageTime: new Date()
 					}
 				});
-			}
-			console.log(obstacle);
-			bulletCollection.remove({
+			}*/
+/*
+			gs.BulletsData.remove({
 				_id: sender._id
-			});
+			});*/
 		}
 
 		for (var i in bullets) {

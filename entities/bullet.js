@@ -5,7 +5,7 @@
 var gs = Meteor.gameSpace = Meteor.gameSpace || {};
 
 //represents a player's bullet
-gs.Bullet = function (doc) {
+gs.Bullet = function () {
 
 	//defaults
 	this.width = 3;
@@ -13,8 +13,7 @@ gs.Bullet = function (doc) {
 	this.speed = 20;
 	this.fillStyle = 'rgb(255, 255, 255)';
 	this.fireUpdateCallback = null;
-
-	gs.animatedEntity.init.call(this, doc);
+	gs.animatedEntity.init.call(this);
 };
 
 _.extend(gs.Bullet.prototype, gs.animatedEntity);

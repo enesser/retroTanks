@@ -1,0 +1,7 @@
+
+Meteor.uuid(); instead of GUID class
+
+
+Write generic store, pass in fields to update set {}
+Look at functional inheritance again
+Tank time out in game logic
