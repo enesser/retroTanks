@@ -3,6 +3,7 @@
 /* global Meteor: true */
 var gs = Meteor.gameSpace = Meteor.gameSpace || {};
 
+/*
 gs.gameLoop = {
 	run: function (scene, context, tankCollection, bulletCollection) {
 
@@ -13,4 +14,4 @@ gs.gameLoop = {
 		setInterval(
 			function() { gs.frame.sync(scene, context, tankCollection, bulletCollection) }, 33);
 	}
-};
+};*/

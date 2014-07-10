@@ -5,7 +5,7 @@
 var gs = Meteor.gameSpace = Meteor.gameSpace || {};
 
 //represents a player's tank
-gs.Tank = function (doc) {
+gs.Tank = function () {
 
 	//defaults
 	this.width = 47;
@@ -14,14 +14,16 @@ gs.Tank = function (doc) {
 	this.score = 0;
 	this.playerName = '';
 	this.damageTime = null;
+	gs.animatedEntity.init.call(this);
+};
 
-	gs.animatedEntity.init.call(this, doc);
-
-	//populate object with mongo document
+//populate object with mongo document
+gs.Tank.updateFromDoc = function (doc) {
 	if (doc) {
 		this.score = doc.score;
 		this.playerName = doc.playerName;
 		this.damageTime = doc.damageTime;
+		gs.animatedEntity.updateFromDoc.call(this, doc);
 	}
 };
 
@@ -47,9 +49,9 @@ proto.draw = function (context) {
 	context.rotate(this.angle * Math.PI / 180);
 	context.translate(-cx, -cy);
 	context.fillStyle = this.fillStyle;
-	context.fillRect(this.x + 20, this.y + 14, 28, 6);
-	context.fillRect((this.x + 10), this.y + 6, 18, 24);
-	context.fillRect((this.x + 0), this.y, 32, 8);
-	context.fillRect((this.x + 0), this.y + 26, 32, 8);
+	context.fillRect(this.x + 20, this.y + 14, 28, 6); //turret
+	context.fillRect((this.x + 10), this.y + 6, 18, 24); //body
+	context.fillRect((this.x + 0), this.y, 32, 8); //left track
+	context.fillRect((this.x + 0), this.y + 26, 32, 8); //right track
 	context.restore();
 };

@@ -3,13 +3,14 @@
 /* global Meteor: true */
 /* global Session: true */
 /* global _: true */
+
 var gs = Meteor.gameSpace = Meteor.gameSpace || {};
 
 //represents an animated entity
 gs.animatedEntity = {
 
 	//initialize
-	init: function (doc) {
+	init: function () {
 		this.x = this.x || 0;
 		this.y = this.y || 0;
 		this.width = this.width || 0;
@@ -19,7 +20,10 @@ gs.animatedEntity = {
 		this.angle = this.angle || 0;
 		this.fillStyle = this.fillStyle || 'rgb(255, 255, 255)';
 		this.userId = this.userId || '';
+	},
 
+	//update properties from Mongo document
+	updateFromDoc: function (doc) {
 		if (doc) {
 			this._id = doc._id;
 			this.width = doc.width;
@@ -79,6 +83,7 @@ gs.animatedEntity = {
 
 				if (obstacle.userId !== this.userId &&
 					obstacle.isInHitBox(pX, pY, this.width * 0.80, this.height * 0.80)) {
+
 					if (collideCallback) {
 						collideCallback(this, obstacle);
 					}
