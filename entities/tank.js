@@ -39,6 +39,7 @@ proto.isDamaged = function () {
 };
 
 //draw tank
+//node-drawille-canvas for debugging canvas on the console
 proto.draw = function (context) {
 
 	var cx = this.x + 0.5 * this.width;
