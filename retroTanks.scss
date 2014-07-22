@@ -1,0 +1,55 @@
+@import url(http://fonts.googleapis.com/css?family=Press+Start+2P);
+
+$defaultTextColor: #ffffff;
+$primaryLinkColor: #ecec89;
+$secondaryLinkColor: #c6fff2;
+$controlColor: #ff0000;
+
+* {
+  box-sizing: border-box
+}
+
+body {
+  margin-right: 20px;
+  margin-left: 20px;
+  padding: 0px;
+  color: $defaultTextColor;
+  font-family: arial;
+  font-size: 10px;
+  background: #2d2d2d
+}
+
+a {
+  text-decoration: none;
+  color: $defaultTextColor;
+}
+
+h1
+{
+  font-family: 'Press Start 2P', cursive;
+  font-size: 20px;
+}
+
+canvas
+{
+  margin: auto;
+  width: 100%;
+}
+
+.movement
+{
+  font-size: 10px;
+}
+
+.control
+{
+  color: $controlColor;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.authorInfo
+{
+  float: right;
+  font-size: 8px;
+}

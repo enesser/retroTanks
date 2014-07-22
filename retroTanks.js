@@ -37,8 +37,8 @@ if (Meteor.isClient) {
 		//gs.frame.sync(scene, context, Tanks, Bullets);
 		//}, 33);
 
-		function keyup_handler(event) {
-			var myTank = gs.tankService.getMyTank();
+function keyup_handler(event) {
+	var myTank = gs.tankService.getMyTank();
 			/*
 			if (event.keyCode == 87 || event.keyCode == 83) {
 				myTank.stop();
@@ -52,7 +52,7 @@ if (Meteor.isClient) {
 						mod: myTank.mod
 					}
 				});
-			}*/
+}*/
 
 			if (event.keyCode === 32 || event.keyCode === 13) { //space, enter
 				if (myTank && !myTank.isDamaged()) {
@@ -63,6 +63,8 @@ if (Meteor.isClient) {
 					bullet.userId = Session.get('sessionId');
 					bullet.mod = myTank.mod;
 					gs.bulletService.add(bullet);
+					event.preventDefault();
+					event.stopPropagation();
 				}
 			}
 		}
@@ -73,18 +75,26 @@ if (Meteor.isClient) {
 				if (event.keyCode === 87 || event.keyCode === 38) { //W, up
 					myTank.moveForward(gs.scene.walls);
 					gs.tankService.updateLocation(myTank);
+					event.preventDefault();
+					event.stopPropagation();
 				}
 				if (event.keyCode === 83 || event.keyCode === 40) { //S, down
 					myTank.moveBack(gs.scene.walls);
 					gs.tankService.updateLocation(myTank);
+					event.preventDefault();
+					event.stopPropagation();
 				}
 				if (event.keyCode === 65 || event.keyCode === 37) { //A, left
 					myTank.rotateLeft();
 					gs.tankService.updateLocation(myTank);
+					event.preventDefault();
+					event.stopPropagation();
 				}
 				if (event.keyCode === 68 || event.keyCode === 39) { //D, right
 					myTank.rotateRight();
 					gs.tankService.updateLocation(myTank);
+					event.preventDefault();
+					event.stopPropagation();
 				}
 			}
 		}
