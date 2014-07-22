@@ -14,21 +14,23 @@ gs.Tank = function () {
 	this.score = 0;
 	this.playerName = '';
 	this.damageTime = null;
+	this.lastPing = new Date().getTime();
 	gs.animatedEntity.init.call(this);
-};
-
-//populate object with mongo document
-gs.Tank.updateFromDoc = function (doc) {
-	if (doc) {
-		this.score = doc.score;
-		this.playerName = doc.playerName;
-		this.damageTime = doc.damageTime;
-		gs.animatedEntity.updateFromDoc.call(this, doc);
-	}
 };
 
 _.extend(gs.Tank.prototype, gs.animatedEntity);
 var proto = gs.Tank.prototype;
+
+//populate object with mongo document
+proto.updateFromDoc = function (doc) {
+	if (doc) {
+		this.score = doc.score;
+		this.playerName = doc.playerName;
+		this.damageTime = doc.damageTime;
+		this.lastPing = doc.lastPing;
+		gs.animatedEntity.updateFromDoc.call(this, doc);
+	}
+};
 
 //is damaged?
 proto.isDamaged = function () {
@@ -39,7 +41,6 @@ proto.isDamaged = function () {
 };
 
 //draw tank
-//node-drawille-canvas for debugging canvas on the console
 proto.draw = function (context) {
 
 	var cx = this.x + 0.5 * this.width;

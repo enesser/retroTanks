@@ -45,11 +45,20 @@ gs.entityService = function (entityCollectionName, EntityConstructor) {
 	return {
 
 		/**
-		 * Get all entities.
+		 * Get all entities
 		 * @return {array} all entities
 		 */
 		getAll: function () {
 			return allEntities;
+		},
+
+		/**
+		 * Find entity by criteria
+		 * @param  {[type]} criteria
+		 * @return {[type]} entity matching criteria
+		 */
+		find: function (criteria) {
+			return _.findWhere(allEntities, criteria);
 		},
 
 		/**
@@ -83,6 +92,16 @@ gs.entityService = function (entityCollectionName, EntityConstructor) {
 				y: entity.y,
 				angle: entity.angle,
 				mod: entity.mod
+			});
+		},
+
+		/**
+		 * Remove an entity.
+		 * @param {object} entity
+		 */
+		remove: function (entity) {
+			DataCollection.remove({
+				_id: entity._id
 			});
 		}
 	};
