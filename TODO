@@ -13,7 +13,12 @@ Game, Today:
 Tomorrow:
 - Spawning
 - Damage
-- Add app cache and learn how it works
+- Add appcache and learn how it works
 - Tank collision
 - New walls
+- Scoring
+- Aesthetics
+- Diagram
+- Unit tests
+
 
