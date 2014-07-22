@@ -34,7 +34,7 @@ if (Meteor.isClient) {
 		gs.myTank.x = 25;
 		gs.myTank.y = 200;
 
-		var tankCount = gs.tankStore.getAll().length;
+		var tankCount = gs.tankService.getAll().length;
 
 		if (tankCount == 1) {
 			tank.fillStyle = 'rgb(0,255,0);'
@@ -47,7 +47,7 @@ if (Meteor.isClient) {
 		console.log(tankCount);
 		console.log(tank.fillStyle);
 
-		gs.myTank._id = gs.tankStore.add(tank);
+		gs.myTank._id = gs.tankService.add(tank);
 
 		//run game loop at ~30 FPS
 		//var gameLoop =
@@ -104,19 +104,19 @@ if (Meteor.isClient) {
 
 			if (event.keyCode == 87) { //W
 				gs.myTank.moveUp(scene.walls);
-				gs.tankStore.update(gs.myTank);
+				gs.tankService.updateLocation(gs.myTank);
 			}
 			if (event.keyCode == 83) { //S
 				gs.myTank.moveDown(scene.walls);
-				gs.tankStore.update(gs.myTank);
+				gs.tankService.updateLocation(gs.myTank);
 			}
 			if (event.keyCode == 65) { //A
 				gs.myTank.rotateLeft();
-				gs.tankStore.update(gs.myTank);
+				gs.tankService.updateLocation(gs.myTank);
 			}
 			if (event.keyCode == 68) { //D
 				gs.myTank.rotateRight();
-				gs.tankStore.update(gs.myTank);
+				gs.tankService.updateLocation(gs.myTank);
 			}
 		}
 

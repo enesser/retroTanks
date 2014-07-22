@@ -6,10 +6,10 @@ var gs = Meteor.gameSpace = Meteor.gameSpace || {};
 //synchrnonizes entities in an animation frame
 gs.frame = {
 	sync: function (scene, context) {
-		if (gs.bulletStore && gs.tankStore) {
+		if (gs.bulletService && gs.tankService) {
 
-			var tanks = gs.tankStore.getAll();
-			var bullets = gs.bulletStore.getAll();
+			var tanks = gs.tankService.getAll();
+			var bullets = gs.bulletService.getAll();
 
 			//draw scene on the clients
 			if (Meteor.isClient) {

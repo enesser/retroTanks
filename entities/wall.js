@@ -18,7 +18,6 @@ var proto = gs.Wall.prototype;
 _.extend(proto, gs.abstractEntity);
 
 //draw wall
-
 proto.draw = function (context) {
 	context.save();
 	context.fillStyle = this.fillStyle;
