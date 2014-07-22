@@ -38,14 +38,14 @@ gs.animatedEntity = {
 		}
 	},
 
-	//move up
-	moveUp: function (obstacles, moveCallback, collideCallback) {
+	//move forward
+	moveForward: function (obstacles, moveCallback, collideCallback) {
 		this.mod = 1;
 		this.updatePosition(obstacles, moveCallback, collideCallback);
 	},
 
-	//move down
-	moveDown: function (obstacles, callback) {
+	//move back
+	moveBack: function (obstacles, callback) {
 		this.mod = -1;
 		this.updatePosition(obstacles, callback);
 	},
