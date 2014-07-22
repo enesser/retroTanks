@@ -28,8 +28,9 @@ function gameLoop() {
 			Meteor.defer(gs.pingTool.updateMyTankPing);
 		}
 
+		//handle bullet movement and collisions
 		if (Meteor.isServer) {
-			//gs.bulletMover.moveBullets(scene.walls, tanks, bullets);
+			gs.ballistics.update(gs.scene.walls, tanks, bullets);
 		}
 	}
 }
