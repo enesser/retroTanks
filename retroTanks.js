@@ -1,23 +1,5 @@
 /* global Meteor: true */
 var gs = Meteor.gameSpace || {};
-var context = null;
-var scene = new gs.Scene();
-
-function runThis() {
-
-	if (Meteor.isClient) {
-		var canvas = document.getElementById('canvas');
-
-		if (canvas) {
-			context = canvas.getContext("2d");
-		}
-	}
-
-
-	gs.frame.sync(scene, context);
-}
-
-Meteor.setInterval(runThis, 33);
 
 if (Meteor.isClient) {
 	Template.hello.greeting = function () {
@@ -71,18 +53,15 @@ if (Meteor.isClient) {
 				});
 			}*/
 
-			if (event.keyCode == 32) {
-				//gs.myTank.fire();
+			if (event.keyCode === 32) { //space
 
 				var bullet = new gs.Bullet();
-
 				bullet.x = gs.myTank.x + (gs.myTank.width * 0.5);
 				bullet.y = gs.myTank.y + (gs.myTank.height * 0.5);
 				bullet.angle = gs.myTank.angle;
 				bullet.userId = Session.get('sessionId');
 				bullet.mod = gs.myTank.mod;
-
-				var doc = gs.BulletsData.insert(bullet);
+				gs.bulletService.add(bullet);
 
 				// console.log('bullet!');
 				// var bullet = new gs.Bullet();
@@ -102,19 +81,19 @@ if (Meteor.isClient) {
 
 		function keypress_handler(event) {
 
-			if (event.keyCode == 87) { //W
-				gs.myTank.moveUp(scene.walls);
+			if (event.keyCode === 87) { //W
+				gs.myTank.moveUp(gs.scene.walls);
 				gs.tankService.updateLocation(gs.myTank);
 			}
-			if (event.keyCode == 83) { //S
-				gs.myTank.moveDown(scene.walls);
+			if (event.keyCode === 83) { //S
+				gs.myTank.moveDown(gs.scene.walls);
 				gs.tankService.updateLocation(gs.myTank);
 			}
-			if (event.keyCode == 65) { //A
+			if (event.keyCode === 65) { //A
 				gs.myTank.rotateLeft();
 				gs.tankService.updateLocation(gs.myTank);
 			}
-			if (event.keyCode == 68) { //D
+			if (event.keyCode === 68) { //D
 				gs.myTank.rotateRight();
 				gs.tankService.updateLocation(gs.myTank);
 			}

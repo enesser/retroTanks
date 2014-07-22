@@ -5,3 +5,22 @@ Meteor.uuid(); instead of GUID class
 Write generic store, pass in fields to update set {}
 Look at functional inheritance again
 Tank time out in game logic
+
+Remove new from Levels.
+
+Meteor Talk:
+- Differential.io
+- node-drawille-canvas for debugging canvas on the console
+
+Game, Today:
+- Ballistics
+- Pinging
+- Removing dead pings
+- Remove "new" scene
+
+Tomorrow:
+- Spawning
+- Damage
+- Add app cache and learn how it works
+- Tank collision
+
