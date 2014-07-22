@@ -54,7 +54,7 @@ if (Meteor.isClient) {
 				});
 			}*/
 
-			if (event.keyCode === 32) { //space
+			if (event.keyCode === 32 || event.keyCode === 13) { //space, enter
 				if (myTank && !myTank.isDamaged()) {
 					var bullet = new gs.Bullet();
 					bullet.x = myTank.x + (myTank.width * 0.5);
@@ -64,39 +64,25 @@ if (Meteor.isClient) {
 					bullet.mod = myTank.mod;
 					gs.bulletService.add(bullet);
 				}
-
-				// console.log('bullet!');
-				// var bullet = new gs.Bullet();
-				// var bulletOrigin = myTank.bulletOrigin;
-
-				// console.dir(bulletOrigin);
-
-				// bullet.x = bulletOrigin.x;
-				// bullet.y = bulletOrigin.y;
-				// bullet.fillStyle = 'rgb(255,255,255)';
-				// bullet.angle = bulletOrigin.angle;
-
-				// bullet.userId = 'TEST BULLET';
-				// console.dir(Bullets.insert(bullet, function (err) {}));
 			}
 		}
 
 		function keypress_handler(event) {
 			var myTank = gs.tankService.getMyTank();
 			if (myTank && !myTank.isDamaged()) {
-				if (event.keyCode === 87) { //W
+				if (event.keyCode === 87 || event.keyCode === 38) { //W, up
 					myTank.moveForward(gs.scene.walls);
 					gs.tankService.updateLocation(myTank);
 				}
-				if (event.keyCode === 83) { //S
+				if (event.keyCode === 83 || event.keyCode === 40) { //S, down
 					myTank.moveBack(gs.scene.walls);
 					gs.tankService.updateLocation(myTank);
 				}
-				if (event.keyCode === 65) { //A
+				if (event.keyCode === 65 || event.keyCode === 37) { //A, left
 					myTank.rotateLeft();
 					gs.tankService.updateLocation(myTank);
 				}
-				if (event.keyCode === 68) { //D
+				if (event.keyCode === 68 || event.keyCode === 39) { //D, right
 					myTank.rotateRight();
 					gs.tankService.updateLocation(myTank);
 				}
