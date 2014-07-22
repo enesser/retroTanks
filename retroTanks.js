@@ -82,11 +82,11 @@ if (Meteor.isClient) {
 		function keypress_handler(event) {
 
 			if (event.keyCode === 87) { //W
-				gs.myTank.moveUp(gs.scene.walls);
+				gs.myTank.moveForward(gs.scene.walls);
 				gs.tankService.updateLocation(gs.myTank);
 			}
 			if (event.keyCode === 83) { //S
-				gs.myTank.moveDown(gs.scene.walls);
+				gs.myTank.moveBack(gs.scene.walls);
 				gs.tankService.updateLocation(gs.myTank);
 			}
 			if (event.keyCode === 65) { //A

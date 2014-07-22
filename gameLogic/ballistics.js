@@ -18,7 +18,7 @@ gs.ballistics = {
 	//move bullets
 	update: function (walls, tanks, bullets) {
 		for (var i in bullets) {
-			bullets[i].moveUp(walls.concat(tanks), onMove, onCollide);
+			bullets[i].moveForward(walls.concat(tanks), onMove, onCollide);
 		}
 	}
 };
