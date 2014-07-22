@@ -3,37 +3,22 @@
 /* global Meteor: true */
 var gs = Meteor.gameSpace = Meteor.gameSpace || {};
 
-//moves bullets in a scene
-gs.bulletMover = {
+//move callback
+function onMove(sender) {
+	gs.bulletService.updateLocation(sender);
+}
 
-  //move bullets
-  moveBullets: function (walls, tanks, bullets) {
+//collide callback
+function onCollide(sender, obstacle) {
+	gs.bulletService.remove(sender);
+}
 
-    //on move
-    function moveCallback(sender) {
-      gs.bulletStore.update(sender);
-    }
+gs.ballistics = {
 
-    //on collide
-    function collideCallback(sender, obstacle) {
-      /*
-      if (obstacle.isDamaged !== undefined) {
-        tankCollection.update({
-          _id: obstacle._id
-        }, {
-          $set: {
-            damageTime: new Date()
-          }
-        });
-      }*/
-/*
-      gs.BulletsData.remove({
-        _id: sender._id
-      });*/
-    }
-
-    for (var i in bullets) {
-      bullets[i].moveUp(walls.concat(tanks), moveCallback, collideCallback);
-    }
-  }
+	//move bullets
+	update: function (walls, tanks, bullets) {
+		for (var i in bullets) {
+			bullets[i].moveUp(walls.concat(tanks), onMove, onCollide);
+		}
+	}
 };

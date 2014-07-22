@@ -13,10 +13,10 @@ Meteor Talk:
 - node-drawille-canvas for debugging canvas on the console
 
 Game, Today:
-- Ballistics
-- Pinging
-- Removing dead pings
-- Remove "new" scene
+- [ ] Ballistics
+- [X] Pinging
+- [X] Removing dead pings
+- [X] Remove "new" scene
 
 Tomorrow:
 - Spawning
