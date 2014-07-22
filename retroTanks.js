@@ -12,9 +12,9 @@ if (Meteor.isClient) {
 
 		tank = new gs.Tank();
 		tank.userId = Session.get("sessionId");
-		gs.myTank = tank;
-		gs.myTank.x = 25;
-		gs.myTank.y = 200;
+		myTank = tank;
+		myTank.x = 25;
+		myTank.y = 200;
 
 		var tankCount = gs.tankService.getAll().length;
 
@@ -29,7 +29,7 @@ if (Meteor.isClient) {
 		console.log(tankCount);
 		console.log(tank.fillStyle);
 
-		gs.myTank._id = gs.tankService.add(tank);
+		myTank._id = gs.tankService.add(tank);
 
 		//run game loop at ~30 FPS
 		//var gameLoop =
@@ -38,34 +38,36 @@ if (Meteor.isClient) {
 		//}, 33);
 
 		function keyup_handler(event) {
+			var myTank = gs.tankService.getMyTank();
 			/*
 			if (event.keyCode == 87 || event.keyCode == 83) {
-				gs.myTank.stop();
+				myTank.stop();
 				Tanks.update({
 					_id: gs.myDoc
 				}, {
 					$set: {
-						x: gs.myTank.x,
-						y: gs.myTank.y,
-						angle: gs.myTank.angle,
-						mod: gs.myTank.mod
+						x: myTank.x,
+						y: myTank.y,
+						angle: myTank.angle,
+						mod: myTank.mod
 					}
 				});
 			}*/
 
 			if (event.keyCode === 32) { //space
-
-				var bullet = new gs.Bullet();
-				bullet.x = gs.myTank.x + (gs.myTank.width * 0.5);
-				bullet.y = gs.myTank.y + (gs.myTank.height * 0.5);
-				bullet.angle = gs.myTank.angle;
-				bullet.userId = Session.get('sessionId');
-				bullet.mod = gs.myTank.mod;
-				gs.bulletService.add(bullet);
+				if (myTank && !myTank.isDamaged()) {
+					var bullet = new gs.Bullet();
+					bullet.x = myTank.x + (myTank.width * 0.5);
+					bullet.y = myTank.y + (myTank.height * 0.5);
+					bullet.angle = myTank.angle;
+					bullet.userId = Session.get('sessionId');
+					bullet.mod = myTank.mod;
+					gs.bulletService.add(bullet);
+				}
 
 				// console.log('bullet!');
 				// var bullet = new gs.Bullet();
-				// var bulletOrigin = gs.myTank.bulletOrigin;
+				// var bulletOrigin = myTank.bulletOrigin;
 
 				// console.dir(bulletOrigin);
 
@@ -80,22 +82,24 @@ if (Meteor.isClient) {
 		}
 
 		function keypress_handler(event) {
-
-			if (event.keyCode === 87) { //W
-				gs.myTank.moveForward(gs.scene.walls);
-				gs.tankService.updateLocation(gs.myTank);
-			}
-			if (event.keyCode === 83) { //S
-				gs.myTank.moveBack(gs.scene.walls);
-				gs.tankService.updateLocation(gs.myTank);
-			}
-			if (event.keyCode === 65) { //A
-				gs.myTank.rotateLeft();
-				gs.tankService.updateLocation(gs.myTank);
-			}
-			if (event.keyCode === 68) { //D
-				gs.myTank.rotateRight();
-				gs.tankService.updateLocation(gs.myTank);
+			var myTank = gs.tankService.getMyTank();
+			if (myTank && !myTank.isDamaged()) {
+				if (event.keyCode === 87) { //W
+					myTank.moveForward(gs.scene.walls);
+					gs.tankService.updateLocation(myTank);
+				}
+				if (event.keyCode === 83) { //S
+					myTank.moveBack(gs.scene.walls);
+					gs.tankService.updateLocation(myTank);
+				}
+				if (event.keyCode === 65) { //A
+					myTank.rotateLeft();
+					gs.tankService.updateLocation(myTank);
+				}
+				if (event.keyCode === 68) { //D
+					myTank.rotateRight();
+					gs.tankService.updateLocation(myTank);
+				}
 			}
 		}
 
