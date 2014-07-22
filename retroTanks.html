@@ -1,5 +1,5 @@
 <head>
-  <title>retroTanks</title>
+  <title>Retro Tanks Demo</title>
 </head>
 
 <body>
@@ -7,6 +7,17 @@
 </body>
 
 <template name="hello">
-  <h1>WASD To Move</h1>
-  <canvas id="canvas" width="800" height="400"></canvas>
+  <h1>RetroTanks</h1>
+  <div>
+    <canvas id="canvas" width="800" height="400"></canvas>
+  </div>
+  <div>
+    <span class="movement">
+      FORWARD (<span class="control">W, ↑</span>),
+      BACK (<span class="control">S, ↓</span>),
+      RIGHT (<span class="control">D, →</span>),
+      LEFT (<span class="control">A, ←</span>),
+      FIRE (<span class="control">SPACE, ENTER</span>)
+    </span>
+  </div>
 </template>
