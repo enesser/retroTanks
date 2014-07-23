@@ -53,6 +53,15 @@ gs.entityService = function (entityCollectionName, EntityConstructor) {
 		},
 
 		/**
+		 * Get handle on data collection cursor
+		 * @param  {object} sort
+		 */
+		getCursor: function(criteria, sort)
+		{
+			return DataCollection.find({}, { sort: sort });
+		},
+
+		/**
 		 * Find entity by criteria
 		 * @param  {[type]} criteria
 		 * @return {[type]} entity matching criteria
