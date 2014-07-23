@@ -1,5 +1,7 @@
 {
   "packages": {
-    "sass": {}
+    "sass": {},
+    "bootboxjs": {},
+    "bootstrap3-sass": {}
   }
 }
