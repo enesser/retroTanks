@@ -82,7 +82,7 @@ gs.animatedEntity = {
 				obstacle = obstacles[i];
 
 				if (obstacle.userId !== this.userId &&
-					obstacle.isInHitBox(pX, pY, this.width * 0.80, this.height * 0.80)) {
+					obstacle.isInHitBox(pX, pY, this.width, this.height)) {
 
 					if (collideCallback) {
 						collideCallback(this, obstacle);

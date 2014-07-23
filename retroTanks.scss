@@ -23,6 +23,21 @@ h1
 {
   font-family: 'Press Start 2P', cursive;
   font-size: 2.2em;
+  float: left;
+}
+
+.scores
+{
+  font-family: 'Press Start 2P', cursive;
+  float: right;
+  font-size: 1.6em;
+  padding: 1em;
+}
+
+.scores td
+{
+  padding-right: 1em;
+  width: 10em;
 }
 
 .modal-dialog
@@ -38,14 +53,14 @@ canvas
 
 .movement
 {
-  font-size: 10px;
+  font-size: 1.2em;
 }
 
 .control
 {
   color: $controlColor;
   font-weight: bold;
-  font-size: 1.0em;
+  font-size: 1.2em;
 }
 
 .authorInfo

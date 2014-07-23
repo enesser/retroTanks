@@ -17,11 +17,14 @@ gs.spawner = {
 
 			bootbox.prompt("What is your name?", function (result) {
 				if (result) {
+					if (result.length > 10) {
+						result = result.substr(0, 10) + '...';
+					}
 					myTank.playerName = result;
 					Session.set("sessionId", Meteor.uuid());
 					myTank.userId = Session.get("sessionId");
-					myTank.x = 25;
-					myTank.y = 200;
+					myTank.x = 34;
+					myTank.y = 180;
 
 					var tankCount = gs.tankService.getAll().length;
 
@@ -35,8 +38,10 @@ gs.spawner = {
 
 					myTank._id = gs.tankService.add(myTank);
 
-					window.addEventListener("keyup", gs.controls.keyUpHandler, false);
-					window.addEventListener("keydown", gs.controls.keyPressHandler, false);
+					Meteor.setTimeout(function () {
+						window.addEventListener("keyup", gs.controls.keyUpHandler, false);
+						window.addEventListener("keydown", gs.controls.keyPressHandler, false);
+					}, 250);
 				} else {
 					self.spawnTank();
 				}
