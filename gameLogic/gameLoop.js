@@ -47,8 +47,8 @@ function respawnLoop() {
 		for (var i in tanks) {
 			tank = tanks[i];
 			if (tank.damageTime) {
-				elapsedDamageTimeInSeconds = (new Date().getTime() - new Date(tank.lastPing).getTime()) / 1000;
-				if (elapsedDamageTimeInSeconds >= 2) {
+				elapsedDamageTimeInSeconds = (new Date().getTime() - new Date(tank.damageTime).getTime()) / 1000;
+				if (elapsedDamageTimeInSeconds >= 3) {
 					tanks[i].damageTime = null;
 					gs.spawner.respawnTank(tank);
 				}
