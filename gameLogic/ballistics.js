@@ -49,10 +49,17 @@ gs.ballistics = {
 	 * @param  {Array} bullets
 	 */
 	update: function (walls, tanks, bullets) {
+		var bullet;
 		var tank;
 
 		for (var i in bullets) {
-			bullets[i].moveForward(walls.concat(tanks), onMove, onCollide);
+			bullet = bullets[i];
+
+			if (bullet.x > 0 && bullet.y > 0) {
+				bullet.moveForward(walls.concat(tanks), onMove, onCollide);
+			} else {
+				gs.bulletService.remove(bullet);
+			}
 		}
 
 		for (var i in tanks) {

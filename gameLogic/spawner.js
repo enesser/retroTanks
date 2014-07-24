@@ -99,5 +99,21 @@ gs.spawner = {
 				}
 			});
 		}
+	},
+
+	/**
+	 * Respawn a tank after it's been damaged
+	 */
+	respawnTank: function (tank) {
+		var spawnPoints = gs.scene.spawnPoints;
+		attemptSpawn(tank, Math.floor(Math.random() * spawnPoints.length),
+			function (spawnPoint) {
+				gs.tankService.update(tank, {
+					x: spawnPoint.x,
+					y: spawnPoint.y,
+					angle: spawnPoint.angle,
+					damageTime: null
+				});
+			});
 	}
 };
