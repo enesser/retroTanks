@@ -4,6 +4,12 @@
 $defaultTextColor: #ffffff;
 $backgroundColor: #2d2d2d;
 $controlColor: #ff0000;
+$inverted: #000000;
+
+$color1: rgb(156,32,32);
+$color2: rgb(28,32,156);
+$color3: rgb(250,253,0);
+$color4: rgb(72,0,120);
 
 body {
   margin: 0 1em 0 1em;
@@ -68,4 +74,25 @@ canvas
 {
   float: right;
   font-size: 0.8em;
+}
+
+.color1
+{
+  background-color: $color1;
+}
+
+.color2
+{
+  background-color: $color2;
+}
+
+.color3
+{
+  background-color: $color3;
+  color: $inverted;
+}
+
+.color4
+{
+  background-color: $color4;
 }

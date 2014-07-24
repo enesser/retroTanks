@@ -73,12 +73,19 @@ gs.spawner = {
 
 					var tankCount = gs.tankService.getAll().length;
 
-					if (tankCount === 1) {
-						myTank.fillStyle = 'rgb(0,255,0);';
+					//Atari color pallete
+					if (tankCount === 0) {
+						myTank.fillStyle = 'rgb(156, 32, 32);';
+						myTank.cssClass = 'color1';
+					} else if (tankCount === 1) {
+						myTank.fillStyle = 'rgb(28, 32, 156);';
+						myTank.cssClass = 'color2';
 					} else if (tankCount === 2) {
-						myTank.fillStyle = 'rgb(0,0,255);';
+						myTank.fillStyle = 'rgb(250, 253, 0);';
+						myTank.cssClass = 'color3';
 					} else if (tankCount === 3) {
-						myTank.fillStyle = 'rgb(100,100,100);';
+						myTank.fillStyle = 'rgb(72, 0, 120);';
+						myTank.cssClass = 'color4';
 					}
 
 					//attempt a spawn
