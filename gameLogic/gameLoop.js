@@ -4,8 +4,8 @@
 var gs = Meteor.gameSpace = Meteor.gameSpace || {};
 var context;
 
-/*
-Main game loop, runs at ~30 FPS.
+/**
+ * Main game loop, runs at ~30 FPS.
  */
 function gameLoop() {
 
@@ -18,7 +18,6 @@ function gameLoop() {
 	}
 
 	if (gs.scene && gs.bulletService && gs.tankService && gs.pingTool) {
-
 		var tanks = gs.tankService.getAll();
 		var bullets = gs.bulletService.getAll();
 

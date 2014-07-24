@@ -1,5 +1,3 @@
-Remove new from Levels (maybe)
-
 Meteor Talk:
 - Differential.io
 - node-drawille-canvas for debugging canvas on the console
@@ -21,10 +19,23 @@ Tomorrow:
 - Diagram
 - Unit tests
 - Color
+- Refactor
+- Comment
+
+New Bug:
+- Focus is lost on spawn dialog
+
+Tonight:
+- Color
+- Respawn
+- Spawn Positions
+
 
 http://www.movienr.com/
 https://pintask.me/
 http://differential.io/
+http://sidebar.io/
+
 
 
 

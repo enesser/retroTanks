@@ -11,12 +11,19 @@ gs.Levels = function (width, height) {
 	proto.width = width;
 	proto.height = height;
 
+	/**
+	 * Default level.
+	 * @type {Object}
+	 */
 	proto.defaultLevel = {};
 
-	//walls
+	/**
+	 * Walls.
+	 * @type {Array}
+	 */
 	proto.defaultLevel.walls = [
 		//interior walls
-		new gs.Wall(100, 100, 14, 200), //left
+		new gs.Wall(100, 100, 14, 200 ), //left
 		new gs.Wall(680, 100, 14, 200), //right
 		new gs.Wall((proto.width / 2) - 50, (proto.height / 2) - 40, 100, 80), //middle
 
@@ -27,8 +34,25 @@ gs.Levels = function (width, height) {
 		new gs.Wall(0, proto.height - 14, proto.width, 14), //bottom
 	];
 
-	//spawn #1: 34, 180
-	//spawn #2: 719, 180
-	//spawn #3: 376, 260
-	//spawn #4: 102, 378
+	/**
+	 * Spawn points.
+	 * @type {Array}
+	 */
+	proto.defaultLevel.spawnPoints = [{
+		x: 34, //outer left
+		y: 180,
+		angle: 0
+	}, {
+		x: 719, //outer right
+		y: 180,
+		angle: 180
+	}, {
+		x: 376, //inner bottom
+		y: 260,
+		angle: 270
+	}, {
+		x: 375, //inner top
+		y: 108,
+		angle: 90
+	}];
 };
