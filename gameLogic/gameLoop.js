@@ -40,7 +40,7 @@ function gameLoop() {
  */
 function respawnLoop() {
 
-	if (gs.tankService && gs.spawner) {
+	if (gs.tankService && gs.spawner && gs.spawner.respawnCount === 0) {
 		var tanks = gs.tankService.getAll();
 		var tank, elapsedDamageTimeInSeconds;
 
