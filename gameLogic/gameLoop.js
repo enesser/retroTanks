@@ -8,9 +8,10 @@ var context;
  * Main game loop, runs at ~30 FPS.
  */
 function gameLoop() {
+	var canvas, tanks, bullets;
 
 	if (!context && Meteor.isClient) {
-		var canvas = document.getElementById('canvas');
+		canvas = document.getElementById('canvas');
 
 		if (canvas) {
 			context = canvas.getContext('2d');
@@ -18,8 +19,8 @@ function gameLoop() {
 	}
 
 	if (gs.scene && gs.bulletService && gs.tankService && gs.pingTool) {
-		var tanks = gs.tankService.getAll();
-		var bullets = gs.bulletService.getAll();
+		tanks = gs.tankService.getAll();
+		bullets = gs.bulletService.getAll();
 
 		//draw scene on the clients
 		if (context) {
@@ -27,11 +28,34 @@ function gameLoop() {
 			Meteor.defer(gs.pingTool.updateMyTankPing);
 		}
 
-		//handle bullet movement and collisions
 		if (Meteor.isServer) {
+			//handle bullet movement and collisions
 			gs.ballistics.update(gs.scene.walls, tanks, bullets);
 		}
 	}
 }
 
+/**
+ * Respawn tanks that have been damaged
+ */
+function respawnLoop() {
+
+	if (gs.tankService && gs.spawner) {
+		var tanks = gs.tankService.getAll();
+		var tank, elapsedDamageTimeInSeconds;
+
+		for (var i in tanks) {
+			tank = tanks[i];
+			if (tank.damageTime) {
+				elapsedDamageTimeInSeconds = (new Date().getTime() - new Date(tank.lastPing).getTime()) / 1000;
+				if (elapsedDamageTimeInSeconds >= 2) {
+					tanks[i].damageTime = null;
+					gs.spawner.respawnTank(tank);
+				}
+			}
+		}
+	}
+}
+
 Meteor.setInterval(gameLoop, 33);
+Meteor.setInterval(respawnLoop, 1000);
