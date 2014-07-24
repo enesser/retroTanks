@@ -7,7 +7,10 @@ var pingTimeoutInSeconds = 5;
 var pingRefreshInSeconds = 2;
 var myLastPing = new Date().getTime();
 
-//remove tanks if inactive
+/**
+ * Remove tanks if inactive
+ * @param  {object} tank
+ */
 function removeIfInactive(tank) {
 	var elapsedTimeInSeconds = (new Date().getTime() - new Date(tank.lastPing).getTime()) / 1000;
 	if (elapsedTimeInSeconds > pingTimeoutInSeconds) {

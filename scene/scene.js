@@ -8,11 +8,12 @@ var levels = new gs.Levels(width, height);
 
 //represents the scene
 gs.scene = {
-	/**
-	 * Walls.
-	 * @type {[array]}
-	 */
+
+	// walls
 	walls: levels.defaultLevel.walls,
+
+	// spawn points
+	spawnPoints: levels.defaultLevel.spawnPoints,
 
 	/**
 	 * Draw scene.

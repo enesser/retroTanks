@@ -3,12 +3,19 @@
 /* global Meteor: true */
 var gs = Meteor.gameSpace = Meteor.gameSpace || {};
 
-//move callback
+/**
+ * On bullet move
+ * @param  {object} sender
+ */
 function onMove(sender) {
 	gs.bulletService.updateLocation(sender);
 }
 
-//collide callback
+/**
+ * On bullet collision
+ * @param  {object} sender
+ * @param {object} obstacle
+ */
 function onCollide(sender, obstacle) {
 	var awardedTank;
 	gs.bulletService.remove(sender);
@@ -35,7 +42,12 @@ function onCollide(sender, obstacle) {
 
 gs.ballistics = {
 
-	//move bullets
+	/**
+	 * Update bullet movement
+	 * @param  {Array} walls
+	 * @param  {Array} tanks
+	 * @param  {Array} bullets
+	 */
 	update: function (walls, tanks, bullets) {
 		var tank;
 

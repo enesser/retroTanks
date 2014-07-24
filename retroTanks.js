@@ -4,6 +4,7 @@
 /* global Template: true */
 var gs = Meteor.gameSpace || {};
 
+//scoreboard
 if (Meteor.isClient) {
 	Template.playArea.tanks = function () {
 		if (gs.tankService) {
@@ -13,8 +14,11 @@ if (Meteor.isClient) {
 		}
 	};
 
+	//spawn tank
 	Template.playArea.rendered = function () {
-		gs.spawner.spawnTank();
+		Meteor.setTimeout(function () {
+			gs.spawner.spawnTank();
+		}, 250);
 	};
 }
 
