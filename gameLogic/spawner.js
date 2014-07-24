@@ -50,6 +50,12 @@ function attemptSpawn(myTank, preferredSpawnIndex, callback) {
 gs.spawner = {
 
 	/**
+	 * Respawn counter
+	 * @type {Number}
+	 */
+	respawnCount: 0,
+
+	/**
 	 * Spawn tank into the scene
 	 */
 	spawnTank: function () {
@@ -112,7 +118,9 @@ gs.spawner = {
 	 * Respawn a tank after it's been damaged
 	 */
 	respawnTank: function (tank) {
+		var self = this;
 		var spawnPoints = gs.scene.spawnPoints;
+		++self.respawnCount;
 		attemptSpawn(tank, Math.floor(Math.random() * spawnPoints.length),
 			function (spawnPoint) {
 				gs.tankService.update(tank, {
@@ -121,6 +129,7 @@ gs.spawner = {
 					angle: spawnPoint.angle,
 					damageTime: null
 				});
+				--self.respawnCount;
 			});
 	}
 };
