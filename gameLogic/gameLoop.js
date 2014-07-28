@@ -31,26 +31,21 @@ function gameLoop() {
 		if (Meteor.isServer) {
 			//handle bullet movement and collisions
 			gs.ballistics.update(gs.scene.walls, tanks, bullets);
-		}
-	}
-}
 
-/**
- * Respawn tanks that have been damaged
- */
-function respawnLoop() {
+			//respawn tanks
+			if (gs.tankService && gs.spawner && gs.spawner.respawnCount === 0) {
+				var tanks = gs.tankService.getAll();
+				var tank, elapsedDamageTimeInSeconds;
 
-	if (gs.tankService && gs.spawner && gs.spawner.respawnCount === 0) {
-		var tanks = gs.tankService.getAll();
-		var tank, elapsedDamageTimeInSeconds;
-
-		for (var i in tanks) {
-			tank = tanks[i];
-			if (tank.damageTime) {
-				elapsedDamageTimeInSeconds = (new Date().getTime() - new Date(tank.damageTime).getTime()) / 1000;
-				if (elapsedDamageTimeInSeconds >= 3) {
-					tanks[i].damageTime = null;
-					gs.spawner.respawnTank(tank);
+				for (var i in tanks) {
+					tank = tanks[i];
+					if (tank.damageTime) {
+						elapsedDamageTimeInSeconds = (new Date().getTime() - new Date(tank.damageTime).getTime()) / 1000;
+						if (elapsedDamageTimeInSeconds >= 3) {
+							tanks[i].damageTime = null;
+							gs.spawner.respawnTank(tank);
+						}
+					}
 				}
 			}
 		}
@@ -58,4 +53,3 @@ function respawnLoop() {
 }
 
 Meteor.setInterval(gameLoop, 33);
-Meteor.setInterval(respawnLoop, 1000);

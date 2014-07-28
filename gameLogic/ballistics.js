@@ -55,7 +55,7 @@ gs.ballistics = {
 		for (var i in bullets) {
 			bullet = bullets[i];
 
-			if (bullet.x > 0 && bullet.y > 0) {
+			if (bullet.x > 0 && bullet.y > 0 && bullet.x < 1000 && bullet.y < 1000) {
 				bullet.moveForward(walls.concat(tanks), onMove, onCollide);
 			} else {
 				gs.bulletService.remove(bullet);
