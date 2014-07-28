@@ -2,8 +2,24 @@
 
 /* global Meteor: true */
 /* global Session: true */
+/* global _: true */
 /* global bootbox: true */
 var gs = Meteor.gameSpace = Meteor.gameSpace || {};
+
+// possible respawn colors using Atari's color pallete
+var respawnColors = [{
+	cssClass: 'color1',
+	fillStyle: 'rgb(156, 32, 32);'
+}, {
+	cssClass: 'color2',
+	fillStyle: 'rgb(28, 32, 156);'
+}, {
+	cssClass: 'color3',
+	fillStyle: 'rgb(250, 253, 0);'
+}, {
+	cssClass: 'color4',
+	fillStyle: 'rgb(72, 0, 120);'
+}, ];
 
 /**
  * Attempt a spawn at preferred spawn index
@@ -77,22 +93,21 @@ gs.spawner = {
 					Session.set('sessionId', Meteor.uuid());
 					myTank.userId = Session.get('sessionId');
 
-					var tankCount = gs.tankService.getAll().length;
+					var allTanks = gs.tankService.getAll();
+					var tankCount = allTanks.length;
 
-					//Atari color pallete
-					if (tankCount === 0) {
-						myTank.fillStyle = 'rgb(156, 32, 32);';
-						myTank.cssClass = 'color1';
-					} else if (tankCount === 1) {
-						myTank.fillStyle = 'rgb(28, 32, 156);';
-						myTank.cssClass = 'color2';
-					} else if (tankCount === 2) {
-						myTank.fillStyle = 'rgb(250, 253, 0);';
-						myTank.cssClass = 'color3';
-					} else if (tankCount === 3) {
-						myTank.fillStyle = 'rgb(72, 0, 120);';
-						myTank.cssClass = 'color4';
-					}
+					//find unused color
+					_.every(respawnColors, function (color) {
+						if (!_.findWhere(allTanks, {
+							cssClass: color.cssClass
+						})) {
+							myTank.cssClass = color.cssClass;
+							myTank.fillStyle = color.fillStyle;
+							return false;
+						} else {
+							return true;
+						}
+					});
 
 					//attempt a spawn
 					attemptSpawn(myTank, tankCount - 1, function (spawnPoint) {
@@ -100,18 +115,23 @@ gs.spawner = {
 						myTank.y = spawnPoint.y;
 						myTank.angle = spawnPoint.angle;
 						myTank._id = gs.tankService.add(myTank);
-
-						//attach controls
-						Meteor.setTimeout(function () {
-							window.addEventListener('keyup', gs.controls.keyUpHandler, false);
-							window.addEventListener('keydown', gs.controls.keyPressHandler, false);
-						}, 250);
+						self.attachControls();
 					});
 				} else {
 					self.spawnTank();
 				}
 			});
 		}
+	},
+
+	/**
+	 * Attach controls
+	 */
+	attachControls: function () {
+		Meteor.setTimeout(function () {
+			window.addEventListener('keyup', gs.controls.keyUpHandler, false);
+			window.addEventListener('keydown', gs.controls.keyPressHandler, false);
+		}, 250);
 	},
 
 	/**
