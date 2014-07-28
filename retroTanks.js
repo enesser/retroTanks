@@ -6,6 +6,8 @@ var gs = Meteor.gameSpace || {};
 
 //scoreboard
 if (Meteor.isClient) {
+
+	//show score on template
 	Template.playArea.tanks = function () {
 		if (gs.tankService) {
 			return gs.tankService.getCursor({

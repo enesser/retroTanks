@@ -28,6 +28,7 @@ proto.updateFromDoc = function (doc) {
 		this.playerName = doc.playerName;
 		this.damageTime = doc.damageTime;
 		this.lastPing = doc.lastPing;
+		this.cssClass = doc.cssClass;
 		gs.animatedEntity.updateFromDoc.call(this, doc);
 	}
 };
