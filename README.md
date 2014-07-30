@@ -29,6 +29,7 @@ There are no special instructions to get RetroTanks up and running. Just type
 ## Known Issues
 - Hit detection and respawning can be a little glitchy every once in a while.
 - MongoDB is used unconventionally here and should probably be switched out for another technology (like streams.) MongoDB kept up like a champ in a 12 player live demo, though.
+- Starter packages like "Insecure" and "Autpublish" are still included.
 - This game was written in about four hours. Many improvements can be made. Feel free to reach out to me if you're interested in improving
   the game.
 
