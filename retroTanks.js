@@ -1,3 +1,8 @@
+/*
+	RetroTanks v1.0
+	Eric J Nesser, March 2014
+ */
+
 'use strict';
 
 /* global Meteor: true */
@@ -10,9 +15,7 @@ if (Meteor.isClient) {
 	//show score on template
 	Template.playArea.tanks = function () {
 		if (gs.tankService) {
-			return gs.tankService.getCursor({
-				score: -1
-			});
+			return gs.tankService.getCursor();
 		}
 	};
 
