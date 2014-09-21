@@ -1,4 +1,4 @@
-RetroTanks v1.0
+﻿RetroTanks v1.0
 ==========
 
 RetroTanks: Atari Combat Reimagined, built in Meteor
@@ -10,11 +10,6 @@ RetroTanks supports an unlimited number of players. There are currently four
 spawn points, but you can always add more.
 
 ![Screenshot](https://raw.githubusercontent.com/enesser/retroTanks/master/screenshot.png)
-
-## Demo
-There's no concept of separate lobbies or arenas yet, so this will probably
-be pure chaos. If you're into chaos, feel free to try out the demo version at
-[http://retrotanks.meteor.com](http://retrotanks.meteor.com).
 
 ## Instructions
 - Press (w) or (↑) to move forward.
