@@ -6,6 +6,4 @@
 standard-app-packages
 autopublish
 insecure
-sass
-bootboxjs
-bootstrap3-sass
+mizzao:bootboxjs
