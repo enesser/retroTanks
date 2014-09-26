@@ -1,28 +1,17 @@
-@import 'packages/bootstrap3-sass/bootstrap';
 @import url(http://fonts.googleapis.com/css?family=Press+Start+2P);
-
-$defaultTextColor: #ffffff;
-$backgroundColor: #2d2d2d;
-$controlColor: #ff0000;
-$inverted: #000000;
-
-$color1: rgb(156,32,32);
-$color2: rgb(28,32,156);
-$color3: rgb(250,253,0);
-$color4: rgb(72,0,120);
 
 body {
   margin: 0 1em 0 1em;
   padding: 0px;
-  color: $defaultTextColor;
+  color: #ffffff;
   font-family: arial;
   font-size: 1em;
-  background: $backgroundColor;
+  background: #2d2d2d;
 }
 
 a {
   text-decoration: none;
-  color: $defaultTextColor;
+  color: #ffffff;
 }
 
 h1
@@ -48,7 +37,7 @@ h1
 
 .modal-dialog
 {
-  color: $backgroundColor;
+  color: #2d2d2d;
 }
 
 canvas
@@ -65,7 +54,7 @@ canvas
 
 .control
 {
-  color: $controlColor;
+  color: #ff0000;
   font-weight: bold;
   font-size: 1.2em;
 }
@@ -78,21 +67,21 @@ canvas
 
 .color1
 {
-  background-color: $color1;
+  background-color: rgb(156,32,32);
 }
 
 .color2
 {
-  background-color: $color2;
+  background-color: rgb(28,32,156);
 }
 
 .color3
 {
-  background-color: $color3;
-  color: $inverted;
+  background-color: rgb(250,253,0);
+  color: #000000;
 }
 
 .color4
 {
-  background-color: $color4;
+  background-color: rgb(72,0,120);
 }
