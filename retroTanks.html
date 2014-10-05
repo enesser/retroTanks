@@ -10,7 +10,7 @@
 <template name="playArea">
   <h1>RetroTanks</h1>
 
-  <div class="scores">
+  <section class="scores">
     <table>
       {{#each tanks}}
       <tr class="{{cssClass}}">
@@ -18,12 +18,13 @@
       </tr>
       {{/each}}
     </table>
-  </div>
+  </section>
 
-  <div>
+  <section>
     <canvas id="canvas" width="800" height="400"></canvas>
-  </div>
-  <div>
+  </section>
+
+  <section>
     <span class="movement">
       FORWARD (<span class="control">W, ↑</span>),
       BACK (<span class="control">S, ↓</span>),
@@ -31,5 +32,5 @@
       LEFT (<span class="control">A, ←</span>),
       FIRE (<span class="control">SPACE, ENTER</span>)
     </span>
-  </div>
+  </section>
 </template>
