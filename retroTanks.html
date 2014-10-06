@@ -3,8 +3,20 @@
 </head>
 
 <body>
+  {{> enterPlayerName}}
   {{> playArea}}
 </body>
+
+<!-- Enter Player Name Template -->
+<template name="enterPlayerName">
+  <section class="enterPlayerName">
+    
+  </section>
+  <section class="enterPlayerName--dialog">
+    <h1>Enter your name</h1>
+    <input class="inputPlayerName" type="text"/>
+  </section>
+</template>
 
 <!-- Play Area Template -->
 <template name="playArea">

@@ -1,8 +1,8 @@
 @import url(http://fonts.googleapis.com/css?family=Press+Start+2P);
 
 body {
-  margin: 0 1em 0 1em;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
   color: #ffffff;
   font-family: arial;
   font-size: 60%;
@@ -15,9 +15,80 @@ body {
   height: 100%;
 }
 
-a {
-  text-decoration: none;
-  color: #ffffff;
+@-webkit-keyframes loading {
+  from { opacity: 0; }
+  to { opacity: 0.4; }
+}
+
+@keyframes loading {
+  0% { opacity: 0; }
+  100% { opacity: 0.4; }
+}
+
+.enterPlayerName
+{
+  position: absolute;
+  background-color: #000000;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  opacity: 0.4;
+  -webkit-animation: loading 0.5s ease-in; 
+  animation: loading 0.5s ease-in;
+}
+
+@-webkit-keyframes loading2 {
+  0% { 
+    visibility: visible;
+    top: 0%; 
+  }
+  50% {
+    visibility: visible;
+    top: 55%;
+  }
+  100% { 
+    visibility: visible;
+    box-shadow: 10px 10px 5px #000000;
+    top: 50%; 
+  }
+}
+
+@keyframes loading2 {
+  0% { 
+    visibility: visible;
+    top: 0%; 
+  }
+  50% {
+    visibility: visible;
+    top: 55%;
+  }
+  100% { 
+    visibility: visible;
+    box-shadow: 10px 10px 5px #000000;
+    top: 50%; 
+  }
+}
+
+.enterPlayerName--dialog
+{
+  position: absolute;
+  background-color: #000000;
+  margin: 0 auto;
+  width: 40em;
+  height: 20em;
+  left: 50%;
+  background-color: #ffffff;
+  z-index: 110;
+  visibility: hidden;
+  top: 50%;
+  color: #000000;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-animation: loading2 0.5s ease-out 0.7s forwards;
+  animation: loading2 0.5s ease-out 0.7s forwards;
 }
 
 h1
