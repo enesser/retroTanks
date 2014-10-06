@@ -5,7 +5,7 @@ var gs = Meteor.gameSpace = Meteor.gameSpace || {};
 var context;
 
 /**
- * Main game loop, runs at ~30 FPS.
+ * Main game loop for client
  */
 (function gameClientLoop() {
 

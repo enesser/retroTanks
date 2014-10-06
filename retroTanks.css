@@ -5,8 +5,14 @@ body {
   padding: 0px;
   color: #ffffff;
   font-family: arial;
-  font-size: 1em;
+  font-size: 60%;
   background: #2d2d2d;
+}
+
+.playArea
+{
+  width: 100%;
+  height: 100%;
 }
 
 a {

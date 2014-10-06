@@ -15,9 +15,10 @@ gs.controls = {
 				bullet.userId = myTank.userId;
 				bullet.mod = myTank.mod;
 				gs.bulletService.add(bullet);
-				event.preventDefault();
-				event.stopPropagation();
 			}
+			event.preventDefault();
+			event.stopPropagation();
+			return false;
 		}
 	},
 	keyPressHandler: function (event) {
