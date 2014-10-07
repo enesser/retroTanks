@@ -9,12 +9,14 @@
 
 <!-- Enter Player Name Template -->
 <template name="enterPlayerName">
-  <section class="enterPlayerName">
-    
+  <section class="enterPlayerName">  
   </section>
   <section class="enterPlayerName--dialog">
     <h1>Enter your name</h1>
-    <input class="inputPlayerName" type="text"/>
+    <form onsubmit="return false">
+      <input class="inputPlayerName" type="text" autofocus tabindex="0"/>
+      <button class="inputPlayerName--button" type="submit">Play!</button>
+  </form>
   </section>
 </template>
 
