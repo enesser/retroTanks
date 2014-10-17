@@ -200,3 +200,10 @@ canvas
 {
   background-color: rgb(72,0,120);
 }
+
+@media only screen and (max-width: 60rem) {
+  body
+  {
+    font-size: 40%;
+  }
+}
