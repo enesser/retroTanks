@@ -4,7 +4,7 @@
 RetroTanks: Atari Combat Reimagined, built in Meteor
 
 ## Overview
-RetroTanks is a project I wrote to learn Meteor. It's based on Atari Combat
+RetroTanks is a project I wrote to learn [Meteor](https://www.meteor.com/ "Meteor"). It's based on Atari Combat
 (1977), which originally supported two players. Against my better judgement,
 RetroTanks supports an unlimited number of players. There are currently four
 spawn points, but you can always add more.
