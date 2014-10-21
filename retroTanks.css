@@ -47,18 +47,17 @@ body {
   display: inline-block;
   margin: 0rem 0rem 0rem 4rem;
   float: right;
+  width: 16rem;
 }
 
 .scores .name
 {
   display: inline-block;
-  width: 12rem;
 }
 
-.scores td
+.scores .score
 {
-  padding-right: 1em;
-  width: 10em;
+  float: right;
 }
 
 .drawArea
@@ -225,10 +224,5 @@ canvas
   body
   {
     font-size: 40%;
-  }
-
-  .scores .name
-  {
-    width: 6rem;
   }
 }
