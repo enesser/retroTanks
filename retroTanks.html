@@ -13,20 +13,20 @@
   <section class="enterPlayerName">  
   </section>
   <section class="enterPlayerName--dialog">
-    <h1>Enter your name</h1>
+    <h2>Enter your name</h2>
     <form onsubmit="return false">
       <input class="inputPlayerName" type="text" autofocus tabindex="0"/>
       <button class="inputPlayerName--button" type="submit">Play!</button>
-  </form>
+    </form>
   </section>
 </template>
 
 <!-- Play Area Template -->
 <template name="playArea">
   <section class="playArea">
-    <h1>RetroTanks</h1>
 
     <section class="scores">
+      <h1>RetroTanks</h1>
       <table>
         {{#each tanks}}
         <tr class="{{cssClass}}">
@@ -36,18 +36,16 @@
       </table>
     </section>
 
-    <section>
+    <section class="drawArea">
       <canvas id="canvas" width="800" height="400"></canvas>
     </section>
 
-    <section>
-      <span class="movement">
-        FORWARD (<span class="control">W, ↑</span>),
-        BACK (<span class="control">S, ↓</span>),
-        RIGHT (<span class="control">D, →</span>),
-        LEFT (<span class="control">A, ←</span>),
-        FIRE (<span class="control">SPACE, ENTER</span>)
-      </span>
+    <section class="movement">
+      FORWARD (<span class="control">W, ↑</span>),
+      BACK (<span class="control">S, ↓</span>),
+      RIGHT (<span class="control">D, →</span>),
+      LEFT (<span class="control">A, ←</span>),
+      FIRE (<span class="control">SPACE, ENTER</span>)
     </section>
   </section>
 </template>

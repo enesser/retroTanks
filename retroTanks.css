@@ -5,22 +5,92 @@ body {
   padding: 0;
   color: #ffffff;
   font-family: arial;
-  font-size: 60%;
+  font-size: 100%;
   background: #2d2d2d;
 }
 
 h1
 {
   font-family: 'Press Start 2P', cursive;
-  font-size: 2.2em;
+  font-size: 1.0em;
   float: left;
 }
 
 .playArea
 {
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   padding: 0 1.618em 0 1.618em;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.hidden
+{
+  display: none;
+}
+
+.scores
+{
+  font-family: 'Press Start 2P', cursive;
+  float: right;
+  padding: 1em;
+  height: 10%;
+  width: 100%;
+}
+
+.scores td
+{
+  padding-right: 1em;
+  width: 10em;
+}
+
+.drawArea
+{
+  margin: 0 auto;
+  width: 100%;
+  height: 80%;
+}
+
+canvas
+{
+  width: 100%;
+  height: 80%;
+}
+
+.movement
+{
+  height: 10%;
+  margin-top: 0.809em;
+  margin-bottom: 0.809em;
+  font-size: 0.809em;
+}
+
+.control
+{
+  color: #ff0000;
+  font-weight: bold; 
+}
+
+.color1
+{
+  background-color: rgb(156,32,32);
+}
+
+.color2
+{
+  background-color: rgb(28,32,156);
+}
+
+.color3
+{
+  background-color: rgb(250,253,0);
+  color: #000000;
+}
+
+.color4
+{
+  background-color: rgb(72,0,120);
 }
 
 @-webkit-keyframes loading {
@@ -82,8 +152,8 @@ h1
   position: absolute;
   background-color: #000000;
   margin: 0 auto;
-  width: 20em;
-  height: 11em;
+  width: 20rem;
+  height: 6.5rem;
   left: 50%;
   background-color: #ffffff;
   padding: 1em;
@@ -100,7 +170,7 @@ h1
   animation: loading2 0.5s ease-out 0.7s forwards;
 }
 
-.enterPlayerName--dialog h1
+.enterPlayerName--dialog h2
 {
   margin: 0 auto 0.618em;
   font-family: arial;
@@ -127,78 +197,13 @@ h1
   -webkit-box-shadow: inset 0 -2px #219d55;
   box-shadow: inset 0 -2px #219d55;
   margin: 0 auto;
-  width: 8em;
+  width: 8rem;
   display: block;
-}
-
-.hidden
-{
-  display: none;
-}
-
-.scores
-{
-  font-family: 'Press Start 2P', cursive;
-  float: right;
-  font-size: 1.6em;
-  padding: 1em;
-}
-
-.scores td
-{
-  padding-right: 1em;
-  width: 10em;
 }
 
 .modal-dialog
 {
   color: #2d2d2d;
-}
-
-canvas
-{
-  margin: 0 auto;
-  width: 97%;
-  height: 100%;
-}
-
-.movement
-{
-  font-size: 1.2em;
-}
-
-.control
-{
-  color: #ff0000;
-  font-weight: bold;
-  font-size: 1.2em;
-}
-
-.authorInfo
-{
-  float: right;
-  font-size: 0.8em;
-}
-
-.color1
-{
-  background-color: rgb(156,32,32);
-}
-
-.color2
-{
-  background-color: rgb(28,32,156);
-}
-
-.color3
-{
-  background-color: rgb(250,253,0);
-  color: #000000;
-}
-
-.color4
-{
-  background-color: rgb(72,0,120);
 }
 
 @media only screen and (max-width: 60rem) {
