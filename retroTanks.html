@@ -27,13 +27,20 @@
 
     <section class="scores">
       <h1>RetroTanks</h1>
-      <table>
+
+      <div class="players">
         {{#each tanks}}
-        <tr class="{{cssClass}}">
-          <td>{{playerName}}</td><td>{{score}}</td>
-        </tr>
+        <span class="player {{cssClass}}">
+          <span class="name">
+            {{playerName}}
+          </span>
+          <span class="score">
+            {{score}}
+          </span>
+        </span>
         {{/each}}
-      </table>
+      </div>
+      
     </section>
 
     <section class="drawArea">
