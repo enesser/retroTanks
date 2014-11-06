@@ -44,7 +44,7 @@ proto.isDamaged = function () {
 //damage tank
 proto.damage = function() {
 	this.damageTime = new Date().getTime();
-}
+};
 
 //draw tank
 proto.draw = function (context) {
