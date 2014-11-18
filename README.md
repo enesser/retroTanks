@@ -1,7 +1,7 @@
 ﻿RetroTanks v1.0
 ==========
 
-RetroTanks: Atari Combat Reimagined, built in Meteor
+RetroTanks: Atari Combat Reimagined, built in Meteor.
 
 ## Overview
 RetroTanks is a project I wrote to learn [Meteor](https://www.meteor.com/ "Meteor"). It's based on Atari Combat
@@ -13,7 +13,7 @@ This is a great isomorphic JavaScript example. The grand majority of the codebas
 on both client and server. You can blow out some of the principles I have here to combat
 cheating on the server side, create AI bots, and have in-depth front-side unit testing.
 
-![Screenshot](https://raw.githubusercontent.com/enesser/retroTanks/master/screenshot.png)
+![Screenshot](https://cloud.githubusercontent.com/assets/5659221/5156400/eb703e46-7285-11e4-87ae-756bec7a157a.png)
 
 ## Instructions
 - Press (w) or (↑) to move forward.
