@@ -22,8 +22,16 @@ cheating on the server side, create AI bots, and have in-depth front-side unit t
 - Press (a) or (←) to rotate left.
 - Press (space) or (enter) to fire.
 
-There are no special instructions to get RetroTanks up and running. Just type
-"meteor" or "meteor run" in the project directory and you should be good to go.
+## Installation
+You must have Meteor installed to run RetroTanks. Instructions can be found at [https://www.meteor.com/install](https://www.meteor.com/install).
+
+Once installed, you simply need to clone this repository and run ``meteor``!
+
+```sh
+git clone https://github.com/enesser/retroTanks.git
+cd retroTanks
+meteor
+```
 
 ## Contributions
 I'd be honored to have you contribute to this project. Check the issues board or come up
