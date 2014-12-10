@@ -28,9 +28,9 @@ You must have Meteor installed to run RetroTanks. Instructions can be found at [
 Once installed, you simply need to clone this repository and run ``meteor``!
 
 ```sh
-git clone https://github.com/enesser/retroTanks.git
-cd retroTanks
-meteor
+$ git clone https://github.com/enesser/retroTanks.git
+$ cd retroTanks
+$ meteor
 ```
 
 ## Contributions
