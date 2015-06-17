@@ -12,23 +12,26 @@ var gs = Meteor.gameSpace || {};
 //scoreboard
 if (Meteor.isClient) {
 
-	//show score on template
-	Template.playArea.tanks = function () {
-		if (gs.tankService) {
-			return gs.tankService.getCursor();
-		}
-	};
+    Template.playArea.helpers({
 
-	//spawn tank
-	Template.playArea.rendered = function () {
-		Meteor.setTimeout(function () {
-			gs.spawner.spawnTank();
-		}, 250);
-	};
+        //show score on template
+        tanks: function() {
+            if (gs.tankService) {
+                return gs.tankService.getCursor();
+            }
+        }
+    });
+
+    //spawn tank
+    Template.playArea.rendered = function() {
+        Meteor.setTimeout(function() {
+            gs.spawner.spawnTank();
+        }, 250);
+    };
 }
 
 if (Meteor.isServer) {
-	Meteor.startup(function () {
-		// code to run on server at startup
-	});
+    Meteor.startup(function() {
+        // code to run on server at startup
+    });
 }

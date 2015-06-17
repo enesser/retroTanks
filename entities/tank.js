@@ -35,9 +35,12 @@ proto.updateFromDoc = function (doc) {
 
 //is damaged?
 proto.isDamaged = function () {
+
+	return !!(this.damageTime);
 	if (this.damageTime) {
 		return true;
 	}
+	//!! console.log
 	return false;
 };
 

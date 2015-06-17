@@ -12,7 +12,7 @@ gs.tankService = gs.entityService('tanks', gs.Tank);
  * @return {object} tank entity
  */
 gs.tankService.getMyTank = function () {
-	if (!myTank) {
+	if (!myTank) {	
 		var mySessionId = Session.get('sessionId');
 		if (mySessionId) {
 			myTank = gs.tankService.find({
