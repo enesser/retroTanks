@@ -1,5 +1,5 @@
 /*
-    RetroTanks v1.0
+    RetroTanks v1.x
     Eric J Nesser, March 2014
  */
 

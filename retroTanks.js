@@ -1,6 +1,6 @@
 /*
-	RetroTanks v1.0
-	Eric J Nesser, March 2014
+    RetroTanks v1.x
+    Eric J Nesser, March 2014
  */
 
 'use strict';
