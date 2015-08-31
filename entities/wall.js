@@ -25,6 +25,8 @@ _.extend(proto, gs.abstractEntity);
 //draw wall
 proto.draw = function (context) {
 	context.save();
+	context.shadowBlur = 20; 
+	context.shadowColor = '#000';
 	context.fillStyle = this.fillStyle;
 	context.fillRect(this.x, this.y, this.width, this.height);
 	context.restore();
