@@ -1,58 +1,58 @@
+<!--
+  RetroTanks v1.0
+  Eric J Nesser, March 2014
+ -->
+
 <head>
   <title>Retro Tanks Demo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href=""/>
 </head>
-
-<body>
+<body class="scanlines">
   {{> enterPlayerName}}
   {{> playArea}}
 </body>
-
 <!-- Enter Player Name Template -->
 <template name="enterPlayerName">
-  <section class="enterPlayerName">  
-  </section>
-  <section class="enterPlayerName--dialog">
-    <h2>Enter your name</h2>
-    <form onsubmit="return false">
-      <input class="inputPlayerName" type="text" autofocus tabindex="0"/>
-      <button class="inputPlayerName--button" type="submit">Play!</button>
-    </form>
-  </section>
+<section class="enterPlayerName">
+</section>
+<section class="enterPlayerName--dialog">
+  <h2>Enter your name</h2>
+  <form onsubmit="return false">
+    <input class="inputPlayerName" type="text" autofocus tabindex="0"/>
+    <button class="inputPlayerName--button" type="submit">Play!</button>
+  </form>
+</section>
 </template>
-
 <!-- Play Area Template -->
 <template name="playArea">
-  <section class="playArea">
-
-    <section class="scores">
-      <h1>RetroTanks</h1>
-
-      <div class="players">
-        {{#each tanks}}
-        <span class="player {{cssClass}}">
-          <span class="name">
-            {{playerName}}
-          </span>
-          <span class="score">
-            {{score}}
-          </span>
+<section class="playArea">
+  <section class="scores">
+    <h1>RetroTanks</h1>
+    <div class="players">
+      {{#each tanks}}
+      <span class="player {{cssClass}}">
+        <span class="name">
+          {{playerName}}
         </span>
-        {{/each}}
-      </div>
-      
-    </section>
-
-    <section class="drawArea">
-      <canvas id="canvas" width="800" height="400"></canvas>
-    </section>
-
-    <section class="movement">
-      FORWARD (<span class="control">W, ↑</span>),
-      BACK (<span class="control">S, ↓</span>),
-      RIGHT (<span class="control">D, →</span>),
-      LEFT (<span class="control">A, ←</span>),
-      FIRE (<span class="control">SPACE, ENTER</span>)
-    </section>
+        <span class="score">
+          {{score}}
+        </span>
+      </span>
+      {{/each}}
+    </div>
+    
   </section>
+  <section class="drawArea">
+    <canvas id="canvas" width="800" height="400"></canvas>
+  </section>
+  <section class="movement">
+    FORWARD (<span class="control">W, ↑</span>),
+    BACK (<span class="control">S, ↓</span>),
+    RIGHT (<span class="control">D, →</span>),
+    LEFT (<span class="control">A, ←</span>),
+    FIRE (<span class="control">SPACE, ENTER</span>),
+    TOGGLE SCANLINES (<span class="control">X</span>)
+  </section>
+</section>
 </template>

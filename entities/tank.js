@@ -1,3 +1,8 @@
+/*
+	RetroTanks v1.0
+	Eric J Nesser, March 2014
+ */
+
 'use strict';
 
 /* global Meteor: true */
@@ -59,10 +64,12 @@ proto.draw = function (context) {
 	context.translate(cx, cy);
 	context.rotate(this.angle * Math.PI / 180);
 	context.translate(-cx, -cy);
+	context.shadowBlur = 20; 
+	context.shadowColor = '#000';
 	context.fillStyle = this.fillStyle;
-	context.fillRect(this.x + 20, this.y + 14, 28, 6); //turret
 	context.fillRect((this.x + 10), this.y + 6, 18, 24); //body
 	context.fillRect((this.x + 0), this.y, 32, 8); //left track
 	context.fillRect((this.x + 0), this.y + 26, 32, 8); //right track
+	context.fillRect(this.x + 20, this.y + 14, 28, 6); //turret
 	context.restore();
 };

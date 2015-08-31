@@ -1,3 +1,8 @@
+/*
+    RetroTanks v1.0
+    Eric J Nesser, March 2014
+ */
+
 'use strict';
 
 /* global Meteor: true */
@@ -8,16 +13,16 @@ var gs = Meteor.gameSpace = Meteor.gameSpace || {};
 // possible respawn colors using Atari's color pallete
 var respawnColors = [{
     cssClass: 'color1',
-    fillStyle: 'rgb(156, 32, 32)'
+    fillStyle: 'rgb(207, 83, 83)'
 }, {
     cssClass: 'color2',
-    fillStyle: 'rgb(28, 32, 156)'
+    fillStyle: 'rgb(130, 134, 255)'
 }, {
     cssClass: 'color3',
     fillStyle: 'rgb(250, 253, 0)'
 }, {
     cssClass: 'color4',
-    fillStyle: 'rgb(72, 0, 120)'
+    fillStyle: 'rgb(174, 102, 222)'
 }, ];
 
 /**

@@ -1,0 +1,65 @@
+/*
+  CSS scan lines effect adapted from an example by Meduzen on Codepen.
+  http://codepen.io/meduzen/pen/zxbwRV
+ */
+
+.scanlines {
+  overflow: hidden;
+  position: relative;
+}
+
+.scanlines:before, 
+.scanlines:after {
+  content: '';
+  display: block;
+  pointer-events: none;
+  position: absolute;
+}
+
+.scanlines:before {
+  background: rgba(0, 0, 0, 0.3);
+  height: 1px;
+  opacity: 0.65;
+  width: 100%;
+  z-index: 2147483649;
+  -webkit-animation: scanline 8s linear infinite;
+  animation: scanline 8s linear infinite;
+}
+
+.scanlines:after {
+  background: -webkit-linear-gradient(top, transparent 50%, rgba(0, 0, 0, 0.3) 51%);
+  background: linear-gradient(to bottom, transparent 50%, rgba(0, 0, 0, 0.3) 51%);
+  background-size: 100% 3px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2147483648;
+}
+
+/* ANIMATE UNIQUE SCANLINE */
+@-webkit-keyframes scanline {
+  0% {
+    -webkit-transform: translate3d(0, 200000%, 0);
+    transform: translate3d(0, 200000%, 0);
+  }
+}
+
+@keyframes scanline {
+  0% {
+    -webkit-transform: translate3d(0, 200000%, 0);
+    transform: translate3d(0, 200000%, 0);
+  }
+}
+
+@-webkit-keyframes scanlines {
+  0% {
+    background-position: 0 50%;
+  }
+}
+
+@keyframes scanlines {
+  0% {
+    background-position: 0 50%;
+  }
+}

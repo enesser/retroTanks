@@ -1,7 +1,13 @@
+/*
+	RetroTanks v1.0
+	Eric J Nesser, March 2014
+ */
+
 'use strict';
 
 /* global Meteor: true */
 var gs = Meteor.gameSpace = Meteor.gameSpace || {};
+var scanlines = true;
 
 gs.controls = {
 	keyUpHandler: function (event) {
@@ -47,6 +53,11 @@ gs.controls = {
 				gs.tankService.updateLocation(myTank);
 				event.preventDefault();
 				event.stopPropagation();
+			}
+			if (event.keyCode === 88) { //X, scan line toggle
+				scanlines = !scanlines;
+				var body = document.getElementsByTagName('body')[0];
+				body.className = (scanlines ? 'scanlines' : '');
 			}
 		}
 	}

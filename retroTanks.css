@@ -1,3 +1,8 @@
+/*
+  RetroTanks v1.0
+  Eric J Nesser, March 2014
+ */
+
 @import url(http://fonts.googleapis.com/css?family=Press+Start+2P);
 
 body {
@@ -9,8 +14,7 @@ body {
   background: #2d2d2d;
 }
 
-.playArea
-{
+.playArea {
   width: 100vw;
   height: 100vh;
   padding: 1em 1.618em 0 1.618em;
@@ -18,93 +22,78 @@ body {
   position: relative;
 }
 
-.hidden
-{
+.hidden {
   display: none;
 }
 
-.scores
-{
+.scores {
   font-family: 'Press Start 2P', cursive;
   height: 10%;
   width: 100%;
 }
 
-.scores h1
-{
-  margin-top: 0rem;
+.scores h1 {
+  margin-top: 0;
   font-size: 1rem;
   float: left;
 }
 
-.scores .players
-{
+.scores .players {
   margin-top: 0rem;
 }
 
-.scores .player
-{
+.scores .player {
   display: inline-block;
-  margin: 0rem 0rem 0rem 4rem;
+  margin: 0 0 0 4rem;
   float: right;
   width: 16rem;
 }
 
-.scores .name
-{
+.scores .name {
   display: inline-block;
 }
 
-.scores .score
-{
+.scores .score {
   float: right;
 }
 
-.drawArea
-{
+.drawArea {
   margin: 0 auto;
   width: 100%;
   height: 80%;
 }
 
-canvas
-{
+canvas {
   width: 100%;
   height: 100%;
 }
 
-.movement
-{
-  margin-top: 0.809em;
-  margin-bottom: 0.809em;
-  font-size: 0.809em;
+.movement {
+  margin-top: .809em;
+  margin-bottom: .809em;
+  font-size: .809em;
 }
 
-.control
-{
-  color: #ff0000;
+.control {
+  color: #ff0;
   font-weight: bold; 
 }
 
-.color1
-{
-  background-color: rgb(156,32,32);
+.color1 {
+  background-color: rgb(207,83,83);
 }
 
-.color2
-{
-  background-color: rgb(28,32,156);
+.color2 {
+  background-color: rgb(130,134,255);
 }
 
-.color3
-{
+.color3 {
   background-color: rgb(250,253,0);
-  color: #000000;
+  color: #000;
 }
 
-.color4
-{
-  background-color: rgb(72,0,120);
+.color4 {
+  background-color: rgb(174,102,222);
 }
 
 @-webkit-keyframes loading {
@@ -117,14 +106,13 @@ canvas
   100% { opacity: 0.4; }
 }
 
-.enterPlayerName
-{
+.enterPlayerName {
   position: absolute;
-  background-color: #000000;
+  background-color: #000;
   width: 100%;
   height: 100%;
   z-index: 100;
-  opacity: 0.4;
+  opacity: .4;
   -webkit-animation: loading 0.5s ease-in; 
   animation: loading 0.5s ease-in;
 }
@@ -161,20 +149,19 @@ canvas
   }
 }
 
-.enterPlayerName--dialog
-{
+.enterPlayerName--dialog {
   position: absolute;
-  background-color: #000000;
+  background-color: #000;
   margin: 0 auto;
   width: 20rem;
   height: 6.5rem;
   left: 50%;
-  background-color: #ffffff;
+  background-color: #fff;
   padding: 1em;
   z-index: 110;
   visibility: hidden;
   top: 50%;
-  color: #000000;
+  color: #000;
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
   border-radius: 6px;
@@ -184,24 +171,21 @@ canvas
   animation: loading2 0.5s ease-out 0.7s forwards;
 }
 
-.enterPlayerName--dialog h2
-{
+.enterPlayerName--dialog h2 {
   margin: 0 auto 0.618em;
   font-family: arial;
   text-align: center;
 }
 
-.inputPlayerName
-{
+.inputPlayerName {
   display: block;
   width: 10rem;
   margin: 0 auto 1em;
 }
 
-.inputPlayerName--button
-{
+.inputPlayerName--button {
   padding: 0.618em;
-  color: #ffffff;
+  color: #fff;
   text-align: center;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
   background: #27ae60;
@@ -215,8 +199,7 @@ canvas
   display: block;
 }
 
-.modal-dialog
-{
+.modal-dialog {
   color: #2d2d2d;
 }
 
