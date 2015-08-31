@@ -28,7 +28,7 @@ gs.scene = {
 	 */
 	draw: function (context, tanks, bullets) {
 		if (context) {
-			context.fillStyle = 'rgb(0, 60, 0)';
+			context.fillStyle = 'rgb(51, 111, 51)';
 			context.fillRect(0, 0, width, height);
 
 			//specify drawing order, walls first

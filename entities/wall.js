@@ -16,7 +16,7 @@ gs.Wall = function (x, y, width, height, fillStyle) {
 	this.y = y;
 	this.width = width;
 	this.height = height;
-	this.fillStyle = fillStyle || 'rgb(0, 0, 0)';
+	this.fillStyle = fillStyle || 'rgb(169, 125, 93)';
 };
 
 var proto = gs.Wall.prototype;
