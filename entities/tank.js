@@ -15,6 +15,7 @@ gs.Tank = function () {
 	//defaults
 	this.width = 47;
 	this.height = 33;
+	this.speed = 5;
 	this.userId = '';
 	this.score = 0;
 	this.playerName = '';

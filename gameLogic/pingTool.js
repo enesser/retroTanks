@@ -8,7 +8,7 @@
 /* global Meteor: true */
 /* global _: true */
 var gs = Meteor.gameSpace = Meteor.gameSpace || {};
-var pingTimeoutInSeconds = 120;
+var pingTimeoutInSeconds = 90;
 var pingRefreshInSeconds = 2;
 var myLastPing = new Date().getTime();
 

@@ -156,7 +156,8 @@ gs.spawner = {
      * Attach controls
      */
     attachControls: function() {
-        Meteor.setTimeout(function() {
+        Meteor.defer(function() {
+            gs.controls.initialize();
             window.addEventListener('keyup', gs.controls.keyUpHandler, false);
             window.addEventListener('keydown', gs.controls.keyPressHandler, false);
         }, 250);
