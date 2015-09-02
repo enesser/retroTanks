@@ -27,7 +27,7 @@ gs.controls = {
                 }
                 if (gs.controls.keyMap[65] || gs.controls.keyMap[37]) { //A, left
                     myTank.rotateLeft();
-                    gs.tankService.updateLocation(myTank);    
+                    gs.tankService.updateLocation(myTank);
                 }
                 if (gs.controls.keyMap[68] || gs.controls.keyMap[39]) { //D, right
                     myTank.rotateRight();
@@ -51,6 +51,8 @@ gs.controls = {
                 bullet.userId = myTank.userId;
                 bullet.mod = myTank.mod;
                 gs.bulletService.add(bullet);
+                event.stopPropagation();
+                event.preventDefault();
             }
         }
 
@@ -58,11 +60,19 @@ gs.controls = {
             gs.scanlines = !gs.scanlines;
             var body = document.getElementsByTagName('body')[0];
             body.className = (gs.scanlines ? 'scanlines' : '');
+            event.stopPropagation();
+            event.preventDefault();
         }
     },
 
     //key press
     keyPressHandler: function(event) {
         gs.controls.keyMap[event.keyCode] = true;
+
+        //prevent browser scrolling on up and down keys
+        if (event.keyCode === 38 || event.keyCode === 40) {
+            event.stopPropagation();
+            event.preventDefault();
+        }
     }
 };
