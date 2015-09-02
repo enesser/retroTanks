@@ -123,18 +123,17 @@ gs.spawner = {
                     var allTanks = gs.tankService.getAll();
                     var tankCount = allTanks.length;
 
-                    //find unused color
-                    _.every(respawnColors, function(color) {
-                        if (!_.findWhere(allTanks, {
-                            cssClass: color.cssClass
-                        })) {
-                            myTank.cssClass = color.cssClass;
-                            myTank.fillStyle = color.fillStyle;
-                            return false;
-                        } else {
-                            return true;
+                    //find a color
+                    var c = 0;
+
+                    for (var i=0; i<allTanks.length; i++) {
+                        if (++c > respawnColors.length -1) {
+                            c = 0;
                         }
-                    });
+                    }
+
+                    myTank.cssClass = respawnColors[c].cssClass;
+                    myTank.fillStyle = respawnColors[c].fillStyle;
 
                     //attempt a spawn
                     attemptSpawn(myTank, tankCount - 1, function(spawnPoint) {
