@@ -34,6 +34,8 @@ proto.draw = function (context) {
 	context.translate(cx, cy);
 	context.rotate(this.angle * Math.PI / 180);
 	context.translate(-cx, -cy);
+	context.shadowBlur = 6;
+	context.shadowColor = '#fff';
 	context.fillStyle = this.fillStyle;
 	context.fillRect(this.x, this.y, this.width, this.height);
 	context.restore();
