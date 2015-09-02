@@ -27,7 +27,7 @@ gs.controls = {
                 }
                 if (gs.controls.keyMap[65] || gs.controls.keyMap[37]) { //A, left
                     myTank.rotateLeft();
-                    gs.tankService.updateLocation(myTank);
+                    gs.tankService.updateLocation(myTank);    
                 }
                 if (gs.controls.keyMap[68] || gs.controls.keyMap[39]) { //D, right
                     myTank.rotateRight();
