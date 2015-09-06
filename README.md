@@ -1,4 +1,4 @@
-﻿RetroTanks v1.0
+﻿RetroTanks
 ==========
 
 RetroTanks: Atari Combat Reimagined, built in Meteor.
@@ -21,6 +21,7 @@ cheating on the server side, create AI bots, and have in-depth front-side unit t
 - Press (d) or (→) to rotate right.
 - Press (a) or (←) to rotate left.
 - Press (space) or (enter) to fire.
+- Press (x) to toggle scan lines effect.
 
 ## Installation
 You must have Meteor installed to run RetroTanks. Instructions can be found at [https://www.meteor.com/install](https://www.meteor.com/install).
