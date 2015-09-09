@@ -13,7 +13,7 @@ This is a great isomorphic JavaScript example. The grand majority of the codebas
 on both client and server. You can blow out some of the principles I have here to combat
 cheating on the server side, create AI bots, and have in-depth front-side unit testing.
 
-![Screenshot](https://cloud.githubusercontent.com/assets/5659221/5156400/eb703e46-7285-11e4-87ae-756bec7a157a.png)
+![combat](https://cloud.githubusercontent.com/assets/5659221/9772340/2ceab08a-5701-11e5-9397-6694fcaf1e8f.gif)
 
 ## Instructions
 - Press (w) or (↑) to move forward.
