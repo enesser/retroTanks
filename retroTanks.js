@@ -7,7 +7,7 @@
 
 /* global Meteor: true */
 /* global Template: true */
-var gs = Meteor.gameSpace || {};
+let gs = Meteor.gameSpace || {};
 
 //scoreboard
 if (Meteor.isClient) {
@@ -15,7 +15,7 @@ if (Meteor.isClient) {
     Template.playArea.helpers({
 
         //show score on template
-        tanks: function() {
+        tanks: () => {
             if (gs.tankService) {
                 return gs.tankService.getCursor();
             }
@@ -23,15 +23,15 @@ if (Meteor.isClient) {
     });
 
     //spawn tank
-    Template.playArea.rendered = function() {
-        Meteor.setTimeout(function() {
+    Template.playArea.rendered = () => {
+        Meteor.setTimeout(() => {
             gs.spawner.spawnTank();
         }, 250);
     };
 }
 
 if (Meteor.isServer) {
-    Meteor.startup(function() {
+    Meteor.startup(() => {
         // code to run on server at startup
     });
 }
