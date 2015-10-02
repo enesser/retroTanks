@@ -6,16 +6,16 @@
 'use strict';
 
 /* global Meteor: true */
-var gs = Meteor.gameSpace = Meteor.gameSpace || {};
+let gs = Meteor.gameSpace = Meteor.gameSpace || {};
 
 gs.controls = {
     scanlines: true,
     keyMap: {},
 
     //initialize controls
-    initialize: function() {
-        Meteor.setInterval(function() {
-            var myTank = gs.tankService.getMyTank();
+    initialize: () => {
+        Meteor.setInterval(() => {
+            let myTank = gs.tankService.getMyTank();
             if (myTank && !myTank.isDamaged()) {
                 if (gs.controls.keyMap[87] || gs.controls.keyMap[38]) { //W, up
                     myTank.moveForward(gs.scene.walls);
@@ -38,13 +38,13 @@ gs.controls = {
     },
 
     //key up
-    keyUpHandler: function(event) {
-        var myTank = gs.tankService.getMyTank();
+    keyUpHandler: (event) => {
+        let myTank = gs.tankService.getMyTank();
         gs.controls.keyMap[event.keyCode] = false;
 
         if (event.keyCode === 32 || event.keyCode === 13) { //space, enter
             if (myTank && !myTank.isDamaged()) {
-                var bullet = new gs.Bullet();
+                let bullet = new gs.Bullet();
                 bullet.x = myTank.x + (myTank.width * 0.5);
                 bullet.y = myTank.y + (myTank.height * 0.5);
                 bullet.angle = myTank.angle;
@@ -58,7 +58,7 @@ gs.controls = {
 
         if (event.keyCode === 88) { //X, scan line toggle
             gs.scanlines = !gs.scanlines;
-            var body = document.getElementsByTagName('body')[0];
+            let body = document.getElementsByTagName('body')[0];
             body.className = (gs.scanlines ? 'scanlines' : '');
             event.stopPropagation();
             event.preventDefault();
@@ -66,7 +66,7 @@ gs.controls = {
     },
 
     //key press
-    keyPressHandler: function(event) {
+    keyPressHandler: (event) => {
         gs.controls.keyMap[event.keyCode] = true;
 
         //prevent browser scrolling on up and down keys

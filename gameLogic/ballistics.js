@@ -6,13 +6,13 @@
 'use strict';
 
 /* global Meteor: true */
-var gs = Meteor.gameSpace = Meteor.gameSpace || {};
+let gs = Meteor.gameSpace = Meteor.gameSpace || {};
 
 /**
  * On bullet move
  * @param  {object} sender
  */
-function onMove(sender) {
+let onMove = (sender) => {
 	gs.bulletService.updateLocation(sender);
 }
 
@@ -21,8 +21,8 @@ function onMove(sender) {
  * @param  {object} sender
  * @param {object} obstacle
  */
-function onCollide(sender, obstacle) {
-	var awardedTank;
+let onCollide = (sender, obstacle) => {
+	let awardedTank;
 	gs.bulletService.remove(sender);
 
 	if (obstacle && typeof obstacle.damage === 'function') {
@@ -53,11 +53,11 @@ gs.ballistics = {
 	 * @param  {Array} tanks
 	 * @param  {Array} bullets
 	 */
-	update: function (walls, tanks, bullets) {
-		var bullet;
-		var tank;
+	update: (walls, tanks, bullets) => {
+		let bullet;
+		let tank;
 
-		for (var i in bullets) {
+		for (let i in bullets) {
 			bullet = bullets[i];
 
 			if (bullet.x > 0 && bullet.y > 0 && bullet.x < 1000 && bullet.y < 1000) {
@@ -67,7 +67,7 @@ gs.ballistics = {
 			}
 		}
 
-		for (var i in tanks) {
+		for (let i in tanks) {
 			tank = tanks[i];
 			if (tank.isDamaged()) {
 				for (var j = 0; j < 3; j++) {
