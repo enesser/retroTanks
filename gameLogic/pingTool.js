@@ -7,10 +7,10 @@
 
 /* global Meteor: true */
 /* global _: true */
-var gs = Meteor.gameSpace = Meteor.gameSpace || {};
-var pingTimeoutInSeconds = 90;
-var pingRefreshInSeconds = 2;
-var myLastPing = new Date().getTime();
+let gs = Meteor.gameSpace = Meteor.gameSpace || {};
+let pingTimeoutInSeconds = 90;
+let pingRefreshInSeconds = 2;
+let myLastPing = new Date().getTime();
 
 /**
  * Remove tanks if inactive

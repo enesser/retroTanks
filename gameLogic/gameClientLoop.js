@@ -6,8 +6,8 @@
 'use strict';
 
 /* global Meteor: true */
-var gs = Meteor.gameSpace = Meteor.gameSpace || {};
-var context;
+let gs = Meteor.gameSpace = Meteor.gameSpace || {};
+let context;
 
 /**
  * Main game loop for client
@@ -15,7 +15,7 @@ var context;
 (function gameClientLoop() {
 
 	if (Meteor.isClient) {
-		var canvas, tanks, bullets;
+		let canvas, tanks, bullets;
 
 		if (!context && Meteor.isClient) {
 			canvas = document.getElementById('canvas');

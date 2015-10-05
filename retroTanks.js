@@ -29,9 +29,3 @@ if (Meteor.isClient) {
         }, 250);
     };
 }
-
-if (Meteor.isServer) {
-    Meteor.startup(() => {
-        // code to run on server at startup
-    });
-}

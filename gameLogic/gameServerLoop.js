@@ -6,13 +6,13 @@
 'use strict';
 
 /* global Meteor: true */
-var gs = Meteor.gameSpace = Meteor.gameSpace || {};
+let gs = Meteor.gameSpace = Meteor.gameSpace || {};
 
 /**
  * Main game loop for server
  */
 function gameServerLoop() {
-	var tanks, bullets;
+	let tanks, bullets;
 
 	if (gs.scene && gs.bulletService && gs.tankService) {
 		tanks = gs.tankService.getAll();
@@ -23,7 +23,7 @@ function gameServerLoop() {
 
 		//respawn tanks
 		if (gs.tankService && gs.spawner && gs.spawner.respawnCount === 0) {
-			var tank, elapsedDamageTimeInSeconds;
+			let tank, elapsedDamageTimeInSeconds;
 
 			for (var i in tanks) {
 				tank = tanks[i];
