@@ -7,8 +7,8 @@
 
 /* global Meteor: true */
 /* global Session: true */
-var gs = Meteor.gameSpace = Meteor.gameSpace || {};
-var myTank;
+let gs = Meteor.gameSpace = Meteor.gameSpace || {};
+let myTank;
 
 gs.tankService = gs.entityService('tanks', gs.Tank);
 
@@ -16,9 +16,9 @@ gs.tankService = gs.entityService('tanks', gs.Tank);
  * Get tank for current player by session ID
  * @return {object} tank entity
  */
-gs.tankService.getMyTank = function () {
+gs.tankService.getMyTank = () => {
 	if (!myTank) {	
-		var mySessionId = Session.get('sessionId');
+		let mySessionId = Session.get('sessionId');
 		if (mySessionId) {
 			myTank = gs.tankService.find({
 				userId: mySessionId
