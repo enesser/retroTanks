@@ -6,7 +6,6 @@
 'use strict';
 
 /* global Meteor: true */
-/* global _: true */
 let gs = Meteor.gameSpace = Meteor.gameSpace || {};
 let pingTimeoutInSeconds = 90;
 let pingRefreshInSeconds = 2;
@@ -48,7 +47,10 @@ gs.pingTool = {
 	 * Remove inactive tanks
 	 */
 	removeInactiveTanks: function () {
-		_.each(gs.tankService.getAll(), removeIfInactive);
+		let allTanks = gs.tankService.getAll();
+		allTanks.forEach((tank) => {
+			removeIfInactive(tank);
+		});
 	}
 };
 

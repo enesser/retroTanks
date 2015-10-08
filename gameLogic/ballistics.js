@@ -70,7 +70,7 @@ gs.ballistics = {
 		for (let i in tanks) {
 			tank = tanks[i];
 			if (tank.isDamaged()) {
-				for (var j = 0; j < 3; j++) {
+				for (let j = 0; j < 3; j++) {
 					tank.rotateRight();
 				}
 				gs.tankService.updateLocation(tank);
