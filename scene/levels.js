@@ -6,12 +6,12 @@
 'use strict';
 
 /* global Meteor: true */
-var gs = Meteor.gameSpace || {};
+let gs = Meteor.gameSpace || {};
 
 //represents the levels
 gs.Levels = function(width, height) {
 
-    var proto = gs.Levels.prototype;
+    let proto = gs.Levels.prototype;
 
     proto.width = width;
     proto.height = height;

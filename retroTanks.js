@@ -5,8 +5,7 @@
 
 'use strict';
 
-/* global Meteor: true */
-/* global Template: true */
+/* global Meteor, Template: true */
 let gs = Meteor.gameSpace || {};
 
 //scoreboard

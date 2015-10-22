@@ -11,7 +11,7 @@ var gs = Meteor.gameSpace = Meteor.gameSpace || {};
 
 //represents a player's tank
 gs.Tank = function () {
-
+	
 	//defaults
 	this.width = 47;
 	this.height = 33;

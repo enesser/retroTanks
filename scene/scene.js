@@ -32,9 +32,9 @@ gs.scene = {
 			context.fillRect(0, 0, width, height);
 
 			//specify drawing order, walls first
-			var entities = this.walls.concat(bullets, tanks);
+			let entities = this.walls.concat(bullets, tanks);
 
-			for (var i = 0; i < entities.length; i++) {
+			for (let i = 0; i < entities.length; i++) {
 				entities[i].draw(context);
 			}
 		}

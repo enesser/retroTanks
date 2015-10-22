@@ -5,8 +5,7 @@
 
 'use strict';
 
-/* global Meteor: true */
-/* global Session: true */
+/* global Meteor, Session: true */
 let gs = Meteor.gameSpace = Meteor.gameSpace || {};
 let myTank;
 
