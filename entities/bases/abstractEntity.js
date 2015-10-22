@@ -6,7 +6,7 @@
 'use strict';
 
 /* global Meteor: true */
-var gs = Meteor.gameSpace = Meteor.gameSpace || {};
+let gs = Meteor.gameSpace = Meteor.gameSpace || {};
 
 //represents an abstract entity
 gs.abstractEntity = {

@@ -5,9 +5,8 @@
 
 'use strict';
 
-/* global Meteor: true */
-/* global _: true */
-var gs = Meteor.gameSpace = Meteor.gameSpace || {};
+/* global Meteor, _: true */
+let gs = Meteor.gameSpace = Meteor.gameSpace || {};
 
 //represents a wall, real exciting
 gs.Wall = function (x, y, width, height, fillStyle) {
@@ -19,7 +18,7 @@ gs.Wall = function (x, y, width, height, fillStyle) {
 	this.fillStyle = fillStyle || 'rgb(169, 125, 93)';
 };
 
-var proto = gs.Wall.prototype;
+let proto = gs.Wall.prototype;
 _.extend(proto, gs.abstractEntity);
 
 //draw wall

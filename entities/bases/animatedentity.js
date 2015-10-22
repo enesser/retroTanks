@@ -5,11 +5,8 @@
 
 'use strict';
 
-/* global Meteor: true */
-/* global Session: true */
-/* global _: true */
-
-var gs = Meteor.gameSpace = Meteor.gameSpace || {};
+/* global Meteor, Session, _: true */
+let gs = Meteor.gameSpace = Meteor.gameSpace || {};
 
 //represents an animated entity
 gs.animatedEntity = {

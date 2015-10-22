@@ -5,9 +5,8 @@
 
 'use strict';
 
-/* global Meteor: true */
-/* global _: true */
-var gs = Meteor.gameSpace = Meteor.gameSpace || {};
+/* global Meteor, _: true */
+let gs = Meteor.gameSpace = Meteor.gameSpace || {};
 
 //represents a player's bullet
 gs.Bullet = function () {
@@ -22,13 +21,13 @@ gs.Bullet = function () {
 };
 
 _.extend(gs.Bullet.prototype, gs.animatedEntity);
-var proto = gs.Bullet.prototype;
+let proto = gs.Bullet.prototype;
 
 //draw bullet
 proto.draw = function (context) {
 
-	var cx = this.x + 0.5 * this.width;
-	var cy = this.y + 0.5 * this.height;
+	let cx = this.x + 0.5 * this.width;
+	let cy = this.y + 0.5 * this.height;
 
 	context.save();
 	context.translate(cx, cy);

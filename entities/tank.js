@@ -5,9 +5,8 @@
 
 'use strict';
 
-/* global Meteor: true */
-/* global _: true */
-var gs = Meteor.gameSpace = Meteor.gameSpace || {};
+/* global Meteor, _: true */
+let gs = Meteor.gameSpace = Meteor.gameSpace || {};
 
 //represents a player's tank
 gs.Tank = function () {
@@ -25,7 +24,7 @@ gs.Tank = function () {
 };
 
 _.extend(gs.Tank.prototype, gs.animatedEntity);
-var proto = gs.Tank.prototype;
+let proto = gs.Tank.prototype;
 
 //populate object with mongo document
 proto.updateFromDoc = function (doc) {
@@ -41,13 +40,7 @@ proto.updateFromDoc = function (doc) {
 
 //is damaged?
 proto.isDamaged = function () {
-
 	return !!(this.damageTime);
-	if (this.damageTime) {
-		return true;
-	}
-	//!! console.log
-	return false;
 };
 
 //damage tank
@@ -58,8 +51,8 @@ proto.damage = function() {
 //draw tank
 proto.draw = function (context) {
 
-	var cx = this.x + 0.5 * this.width;
-	var cy = this.y + 0.5 * this.height;
+	let cx = this.x + 0.5 * this.width;
+	let cy = this.y + 0.5 * this.height;
 
 	context.save();
 	context.translate(cx, cy);
